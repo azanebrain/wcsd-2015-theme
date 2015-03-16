@@ -1,0 +1,9 @@
+{
+  "name": "wcsd-2015-thme",
+  "scripts": {
+    "serve": "gulp watch"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.0.1"
+  }
+}
