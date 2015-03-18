@@ -18,7 +18,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?php wp_title( '|', true, 'right' ); ?></title>
+    <title><?php wp_title( ' | ', true, 'right' ); ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css" rel="stylesheet">

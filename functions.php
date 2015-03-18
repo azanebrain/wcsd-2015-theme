@@ -30,5 +30,8 @@ function wcsd_setup() {
   register_nav_menus( array(
     'primary'   => __( 'Top primary menu', 'wcsd' ),
   ) );
+
+  add_theme_support( 'post-thumbnails' ); 
+  
 }
 add_action( 'after_setup_theme', 'wcsd_setup' );
