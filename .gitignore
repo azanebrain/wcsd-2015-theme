@@ -6,7 +6,10 @@
  
 # The distribution directories
 /dist*/
- 
+
+# The config file for local development
+config.json
+
 ##########################
 ##  __   __   __|  ___  ##
 ## |  ) (__) (__| (__/_ ##

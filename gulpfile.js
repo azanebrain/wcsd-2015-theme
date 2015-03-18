@@ -1,4 +1,9 @@
-var browserSync = require('browser-sync');
+var browserSync = require('browser-sync'),
+    gulp        = require('gulp');
+
+var config = './config.json' || {
+  "devUrl": "wcsd.dev"
+};
 
 // ### Watch
 // `gulp watch` - Use BrowserSync to proxy your dev server and synchronize code
@@ -14,10 +19,10 @@ gulp.task('watch', function() {
       blacklist: ['/wp-admin/**']
     }
   });
-  gulp.watch([path.source + 'styles/**/*'], ['styles']);
-  gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
-  gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
-  gulp.watch([path.source + 'images/**/*'], ['images']);
+  gulp.watch(['./styles/**/*'], ['styles']);
+  gulp.watch(['./scripts/**/*'], ['jshint', 'scripts']);
+  gulp.watch(['./fonts/**/*'], ['fonts']);
+  gulp.watch(['./images/**/*'], ['images']);
   gulp.watch(['bower.json'], ['wiredep']);
   gulp.watch('**/*.php', function() {
     browserSync.reload();

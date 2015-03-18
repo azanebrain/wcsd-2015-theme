@@ -1,9 +1,10 @@
 {
   "name": "wcsd-2015-thme",
   "scripts": {
-    "serve": "gulp watch"
+    "serve": "open http://wcsd.dev && gulp watch"
   },
   "devDependencies": {
-    "browser-sync": "^2.0.1"
+    "browser-sync": "^2.0.1",
+    "gulp": "^3.8.10"
   }
 }
