@@ -64,24 +64,12 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <?php 
                 $args = array(
-                    'theme_location' => 'primary'
-                    );
-                    wp_nav_menu( $args );
+                    'theme_location' => 'primary',
+                    'menu_class'      => 'nav navbar-nav',
+                );
+
+                wp_nav_menu( $args );
                 ?>
-                <!-- <ul class="nav navbar-nav">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">Blog</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul> -->
             </div>
             <!-- /.navbar-collapse -->
         </div>
