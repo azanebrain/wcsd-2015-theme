@@ -1,0 +1,1 @@
+This is the resource site for the WordCamp San Diego 2015 Theme Development Workshop
