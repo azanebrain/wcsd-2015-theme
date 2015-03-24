@@ -24,14 +24,11 @@
  * @subpackage WCSD 2015 Theme
  */
 
-
 function wcsd_setup() { 
-  // This theme uses wp_nav_menu() in two locations.
-  register_nav_menus( array(
-    'primary'   => __( 'Top primary menu', 'wcsd' ),
-  ) );
-
-  add_theme_support( 'post-thumbnails' ); 
-  
+    // This theme uses wp_nav_menu() in two locations.
+    register_nav_menus( array(
+        'primary'   => __( 'Top primary menu', 'wcsd' ),
+    ) );
+    add_theme_support( 'post-thumbnails' ); 
 }
 add_action( 'after_setup_theme', 'wcsd_setup' );

@@ -10,8 +10,8 @@
  * @subpackage WCSD 2015 Theme
  */
 
-get_header(); ?>
-
+get_header(); 
+?>
 
 <div class="row">
     <div class="box">
@@ -25,7 +25,7 @@ get_header(); ?>
         <div class="col-md-6">
           <?php
           if ( has_post_thumbnail() ) {
-            the_post_thumbnail('medium');
+             the_post_thumbnail('medium');
           } 
           ?>
         </div>
@@ -34,7 +34,6 @@ get_header(); ?>
               // Start the Loop.
               while ( have_posts() ) {
                 the_post();
-
                 // Include the page content template.
                 the_content();
               }
@@ -74,7 +73,6 @@ get_header(); ?>
         <div class="clearfix"></div>
     </div>
 </div>
-
 
 <?php
 get_footer();

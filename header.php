@@ -37,7 +37,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <?php 
-    wp_head(); ?>
+    wp_head(); 
+    ?>
 
 </head>
 
@@ -66,7 +67,7 @@
                 echo "<ul class='nav navbar-nav'><li>MENU</li></ul>";
                 $args = array(
                     'theme_location' => 'primary',
-                    'menu_class'      => 'nav navbar-nav',
+                    'menu_class'     => 'nav navbar-nav',
                 );
                 // wp_nav_menu( $args );
                 ?>

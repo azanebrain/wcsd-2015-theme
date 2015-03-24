@@ -16,7 +16,8 @@
  * @subpackage WCSD 2015 Theme
  */
 
-get_header(); ?>
+get_header(); 
+?>
 
 <div class="row">
     <div class="box">
@@ -27,44 +28,43 @@ get_header(); ?>
             </h2>
             <hr>
         </div>
-
-      <?php
-
-          // Start the Loop.
-          while ( have_posts() ) {
+        <?php
+        // Start the Loop:
+        while ( have_posts() ) {
             the_post();
-      ?>
-        <div class="col-lg-12 text-center">
-          <?php
-          if ( has_post_thumbnail() ) {
-            the_post_thumbnail('medium');
-          } 
-          ?>
-            <h2> 
-              <?php;
-               the_title();
-              ?>
-                <br>
-                <small><?php the_date(); ?></small>
-            </h2>
-            <?php the_excerpt(); ?>
-            <a href="<?php the_permalink(); ?>" class="btn btn-default btn-lg">Read More</a>
-            <hr>
-        </div>
-      <?php
-          }
-      ?>
+        ?>
+            <div class="col-lg-12 text-center">
+                <?php
+                if ( has_post_thumbnail() ) {
+                    the_post_thumbnail('medium');
+                } 
+                ?>
+                <h2> 
+                    <?php;
+                       the_title();
+                    ?>
+                    <br>
+                    <small><?php the_date(); ?></small>
+                </h2>
+                <?php the_excerpt(); ?>
+                <a href="<?php the_permalink(); ?>" class="btn btn-default btn-lg">Read More</a>
+                <hr>
+              </div>
+        <?php
+        }
+        ?>
         <div class="col-lg-12 text-center">
             <ul class="pager">
               <?php 
               if ( get_previous_posts_link() ) {
               ?>
-                <li class="previous"><?php previous_posts_link( '&larr; Older' ) ?></li>
+                  <li class="previous"><?php previous_posts_link( '&larr; Older' ) ?></li>
               <?php 
               }
+
               if ( get_next_posts_link() ) {
               ?>
-                <li class="next"><?php next_posts_link( 'Newer &rarr;' ) ?></li>
+                  <li class="next"><?php next_posts_link( 'Newer &rarr;' ) ?></li>
               <?php 
               }
               ?>
