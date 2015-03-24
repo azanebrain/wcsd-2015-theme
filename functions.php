@@ -32,3 +32,11 @@ function wcsd_setup() {
     add_theme_support( 'post-thumbnails' ); 
 }
 add_action( 'after_setup_theme', 'wcsd_setup' );
+
+
+function wcsd_scripts() {
+    // Load our main stylesheet.
+    wp_enqueue_style( 'wcsd-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'wcsd-fonts', get_stylesheet_directory_uri() . '/css/fonts.css' );
+}
+add_action( 'wp_enqueue_scripts', 'wcsd_scripts' );

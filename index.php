@@ -18,14 +18,12 @@ get_header(); ?>
     <div class="box">
         <div class="col-lg-12 text-center">
             <h2 class="brand-before">
-                <small>Welcome to</small>
+                <small>Welcome to the</small>
             </h2>
-            <h1 class="brand-name">Business Casual</h1>
+            <h1 class="brand-name">WordCamp San Diego 2015</h1>
             <hr class="tagline-divider">
             <h2>
-                <small>By
-                    <strong>Start Bootstrap</strong>
-                </small>
+                <small><strong>Theme Development Workshop</strong></small>
             </h2>
         </div>
     </div>
@@ -39,7 +37,7 @@ get_header(); ?>
                 <strong>worth visiting</strong>
             </h2>
             <hr>
-            <img class="img-responsive img-border img-left" src="img/intro-pic.jpg" alt="">
+            <img class="img-responsive img-border img-left" src="<?php echo get_template_directory_uri(); ?>/img/intro-pic.jpg" alt="">
             <hr class="visible-xs">
             <p>The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.</p>
             <p>A huge thanks to <a href="http://join.deathtothestockphoto.com/" target="_blank">Death to the Stock Photo</a> for allowing us to use the beautiful photos that make this template really come to life. When using this template, make sure your photos are decent. Also make sure that the file size on your photos is kept to a minumum to keep load times to a minimum.</p>

@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Your Awesome Site 2015</p>
                 </div>
             </div>
         </div>
@@ -27,17 +27,11 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
 
-    <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-    </script>
-
-<?php wp_footer(); ?>
+    <?php wp_footer(); ?>
 
     <script type='text/javascript' id="__bs_script__">//<![CDATA[
         document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.2.4.js'><\/script>".replace("HOST", location.hostname));
     //]]></script>
+    
 </body>
 </html>

@@ -26,10 +26,6 @@
     <!-- Custom CSS -->
     <link href="<?php echo get_template_directory_uri(); ?>/css/business-casual.css" rel="stylesheet">
 
-    <!-- Fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -44,8 +40,8 @@
 
 <body>
 
-    <div class="brand">Business Casual</div>
-    <div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>
+    <div class="brand">Theme Workshop</div>
+    <div class="address-bar">WordCamp San Diego 2015</div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-default" role="navigation">
@@ -59,12 +55,12 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html">Business Casual</a>
+                <a class="navbar-brand" href="index.html">WCSD Theme Workshop</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <?php 
-                echo "<ul class='nav navbar-nav'><li>MENU</li></ul>";
+                echo "<ul class='nav navbar-nav'><li><a href='#'>MENU</a></li></ul>";
                 $args = array(
                     'theme_location' => 'primary',
                     'menu_class'     => 'nav navbar-nav',

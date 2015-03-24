@@ -22,22 +22,32 @@ get_header();
             </h2>
             <hr>
         </div>
-        <div class="col-md-6">
-          <?php
-          if ( has_post_thumbnail() ) {
-             the_post_thumbnail('medium');
-          } 
-          ?>
-        </div>
-        <div class="col-md-6">
-            <?php
-              // Start the Loop.
-              while ( have_posts() ) {
-                the_post();
-                // Include the page content template.
-                the_content();
-              }
-            ?>
+        <?php
+        // If this page has a feature image, display it next to the content
+        // Otherwise have a full-width content section
+        if ( has_post_thumbnail() ) {
+        ?>
+            <div class="col-md-6">
+                <?php the_post_thumbnail('medium'); ?>
+            </div>
+            <div class="col-md-6">
+        <?php
+        } 
+        else {
+        ?>
+            <div class="col-md-12">
+        <?php
+        }
+        ?>
+
+        <?php
+        // Start the Loop.
+        while ( have_posts() ) {
+            the_post();
+            // Include the page content template.
+            the_content();
+        }
+        ?>
         </div>
         <div class="clearfix"></div>
     </div>
