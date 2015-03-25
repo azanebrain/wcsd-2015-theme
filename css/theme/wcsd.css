@@ -281,3 +281,12 @@ body {
  .threecol img {
   border-radius: 50%;
  }
+
+ .reveal .task h2{
+  color: #eee;
+ }
+
+ .reveal .task p{
+  background-color: rgba(240, 240, 240, .8);
+  padding: 10px;
+ }
