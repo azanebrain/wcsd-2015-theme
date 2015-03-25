@@ -232,11 +232,20 @@
 				<section>
 					<h2>The Loop</h2>
 					
-
-					<script src="https://gist.github.com/safranck/4ddd5500e2dab6375e3c.js"></script>
+<pre><code data-trim class="php">
+if ( have_posts() ) {
+  while ( have_posts() ) {
+    the_post(); 
+    //
+    // Post Content here
+    //
+  } // end while
+} // end if
+</code></pre>
 
 					[gotta figure out how to embed php here. it's fuckin up.]
-					[save as gist and embed as the above example]
+          [save as gist and embed as the above example]
+          [here's the formatting using highlight.js]
 				</section>
 
 				<section>
