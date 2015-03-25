@@ -40,7 +40,7 @@ get_header();
                 } 
                 ?>
                 <h2> 
-                    <?php;
+                    <?php
                        the_title();
                     ?>
                     <br>

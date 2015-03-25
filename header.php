@@ -21,10 +21,10 @@
     <title><?php wp_title( ' | ', true, 'right' ); ?></title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo get_template_directory_uri(); ?>/css/business-casual.css" rel="stylesheet">
+    <link href="/css/business-casual.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

@@ -18,7 +18,7 @@ get_header(); ?>
     <div class="box">
         <div class="col-lg-12 text-center">
             <h2 class="brand-before">
-                <small>Welcome to the</small>
+                <small>This is the</small>
             </h2>
             <h1 class="brand-name">WordCamp San Diego 2015</h1>
             <hr class="tagline-divider">
@@ -33,29 +33,15 @@ get_header(); ?>
     <div class="box">
         <div class="col-lg-12">
             <hr>
-            <h2 class="intro-text text-center">Build a website
+            <h2 class="intro-text text-center">You're building a website
                 <strong>worth visiting</strong>
             </h2>
             <hr>
-            <img class="img-responsive img-border img-left" src="<?php echo get_template_directory_uri(); ?>/img/intro-pic.jpg" alt="">
+            <img class="img-responsive img-border img-left" src="<?php echo get_template_directory_uri(); ?>/img/wcsd-logo-2015.png" alt="">
             <hr class="visible-xs">
-            <p>The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.</p>
-            <p>A huge thanks to <a href="http://join.deathtothestockphoto.com/" target="_blank">Death to the Stock Photo</a> for allowing us to use the beautiful photos that make this template really come to life. When using this template, make sure your photos are decent. Also make sure that the file size on your photos is kept to a minumum to keep load times to a minimum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="box">
-        <div class="col-lg-12">
-            <hr>
-            <h2 class="intro-text text-center">Beautiful boxes
-                <strong>to showcase your content</strong>
-            </h2>
-            <hr>
-            <p>Use as many boxes as you like, and put anything you want in them! They are great for just about anything, the sky's the limit!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <p>We believe that one of the best ways to learn is by giving hands-on training and examples that people can then take and use in real world experiences.</p>
+            <p>The goal of the Theme Bootcamp is to do just that. The team will guide you from start to finish on how to take a static, HTML website and integrate it into WordPress. If you have background in HTML and CSS but haven’t yet figured out how to use a solid CMS (content management system) to create dynamic and easily editable websites, this is the Bootcamp for you!</p>
+            <p>When this 4 hour Bootcamp wraps up, it’s our hope that you will have a solid foundation to move forward as a true WordPress theme developer.</p>
         </div>
     </div>
 </div>
