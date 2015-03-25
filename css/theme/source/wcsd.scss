@@ -1,0 +1,46 @@
+/**
+ * Black theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+
+
+
+// Override theme settings (see ../template/settings.scss)
+
+// $mainFont: 'Open Sans', sans-serif;
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFontWeight: bold;
+$headingColor: #111111;
+$mainColor: #111111;
+$linkColor: #86100F;
+$linkColorHover: lighten( $linkColor, 20% );
+$headingLetterSpacing: -0.03em;
+$headingTextTransform: none;
+$selectionBackgroundColor: darken( $linkColor, 20% );
+$mainFontSize: 30px;
+$headingTextShadow: none;
+$heading2Size: 3em;
+$mainFontSize: 40px;
+
+// Background generator
+@mixin bodyBackground() {
+  @include radial-gradient( rgba(111, 172, 234, 1), rgba(144, 189, 234, 1) );
+}
+
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
