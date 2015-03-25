@@ -29,45 +29,38 @@ get_header();
             <hr>
         </div>
         <?php
-        // Start the Loop:
-        while ( have_posts() ) {
-            the_post();
+        if ( have_posts() ) {
+          // Start the Loop:
+          while ( have_posts() ) {
+              the_post();
+          ?>
+              <div class="col-lg-12 text-center">
+                  <img src="<?php echo get_template_directory_uri(); ?>/img/slide-3.jpg">
+                  <h2> 
+                      <?php
+                         the_title();
+                      ?>
+                      <br>
+                      <small><?php the_date(); ?></small>
+                  </h2>
+                  <?php the_excerpt(); ?>
+                  <a href="<?php the_permalink(); ?>" class="btn btn-default btn-lg">Read More</a>
+                  <hr>
+                </div>
+          <?php
+          }
+        } else {
         ?>
             <div class="col-lg-12 text-center">
-                <?php
-                if ( has_post_thumbnail() ) {
-                    the_post_thumbnail('medium');
-                } 
-                ?>
-                <h2> 
-                    <?php
-                       the_title();
-                    ?>
-                    <br>
-                    <small><?php the_date(); ?></small>
-                </h2>
-                <?php the_excerpt(); ?>
-                <a href="<?php the_permalink(); ?>" class="btn btn-default btn-lg">Read More</a>
-                <hr>
-              </div>
+              <h2>Sorry! No posts were found</h2>
+            </div>
         <?php
         }
         ?>
         <div class="col-lg-12 text-center">
             <ul class="pager">
-              <?php 
-              if ( get_previous_posts_link() ) {
-              ?>
-                  <li class="previous"><?php previous_posts_link( '&larr; Older' ) ?></li>
-              <?php 
-              }
-
-              if ( get_next_posts_link() ) {
-              ?>
-                  <li class="next"><?php next_posts_link( 'Newer &rarr;' ) ?></li>
-              <?php 
-              }
-              ?>
+              <li class="previous">&larr; Older</li>
+              <li class="next">&larr; Newer</li>
             </ul>
         </div>
     </div>
