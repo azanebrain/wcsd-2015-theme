@@ -319,18 +319,40 @@
         </section>
 
         <section>
-          <h2>3: Integrating your HTML &amp; WP Tags</h2>
+          <h2>III: Integrating your HTML &amp; WP Tags</h2>
         </section>
 
         <section>
           <section>
             <h2>Index.PHP Teardown</h2>
-          </section>   
+            <aside class="notes">
+              This is a boostrap theme.
+              Now that the theme is activated, we can see that we have a working webpage, but none of the benefits of our CMS
+            </aside>
+          </section>
           <section>
             <h2>get_header() and get_footer()</h2>
             <p class="fragment">Like include()</p>
             <p class="fragment">but different</p>
-          </section>          
+            <aside class="notes">
+              In a WP theme, a page is broken into 3 parts, like a hamburger.
+              WP has a suite of useful functions to help you do complex PHP tasks
+              * These two are like include
+              * But different
+            </aside>
+          </section>   
+          <section>
+            <h2>How to use the Codex and the README</h2>
+            <p><a href="http://codex.wordpress.org">codex.wordpress.org</a></p>
+            <p>The README.md file in the demo project has links to relevant codex articles and code snippets</p>
+            <aside class="notes">
+              The official codex is a great resource to get a general understanding of concepts
+            </aside>
+          </section>       
+          <section data-background="img/task-bg.jpg" class="task">
+            <h2>Task:</h2>
+            <p>Replace <strong>index-sample.php</strong> with <strong>index.php</strong></p>
+          </section>       
         </section>
 
         <section>
@@ -339,17 +361,27 @@
           </section>   
           <section>
             <h2>wp_head()</h2>
-          </section> 
-          <section>
-            <h2>Dev Tools</h2>
+            <p>Meta for your theme</p>
+            <p class="fragment">Dev tools in your browser: 
+              <br>
+              Right click -&gt; Inspect Element</p>
+            <aside class="notes">
+              wp_head() helps display the meta content for your theme. Right now we're just going to look at its basic functionality
+              * Dev tools in your browser
+              If we uncomment wp_head() and reload, we'll see extra meta code in the markup
+            </aside>
           </section>          
         </section>
 
         <section>
           <section>
             <h2>get_template_directory()</h2>
+            <p>Outputs the path to the theme</p>
+            <aside class="notes">
+              Since your theme can be anywhere in your file system, this function outputs a direct path to the theme
+            </aside>
           </section>   
-          <section>
+          <section data-background="img/task-bg.jpg" class="task">
             <h2>Task:</h2>
             <p>Use get_template_directory() to fix the broken links to scripts and styles</p>
           </section>        
@@ -362,7 +394,7 @@
           <section>
             <h2>Defining &amp; Using</h2>
           </section>   
-          <section>
+          <section data-background="img/task-bg.jpg" class="task">
             <h2>Task:</h2>
             <p>Activate the menu</p>
           </section>        
@@ -372,7 +404,7 @@
           <section>
             <h2>Footer.PHP</h2>
           </section>  
-          <section>
+          <section data-background="img/task-bg.jpg" class="task">
             <h2>Task:</h2>
             <p>Add the Admin Bar</p>
           </section>        
@@ -389,7 +421,7 @@
           <section>
             <h2>The Loop</h2>
           </section>   
-          <section>
+          <section data-background="img/task-bg.jpg" class="task">
             <h2>Task:</h2>
             <p>Featured image</p>
           </section>        
@@ -412,7 +444,7 @@
           <section>
             <h2>Pagination</h2>
           </section> 
-          <section>
+          <section data-background="img/task-bg.jpg" class="task">
             <h2>Task:</h2>
             <p>Add previous and next pagination links on the archive template</p>
           </section>    
