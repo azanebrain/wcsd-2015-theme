@@ -22,24 +22,10 @@ get_header();
             </h2>
             <hr>
         </div>
-        <?php
-        // If this page has a feature image, display it next to the content
-        // Otherwise have a full-width content section
-        if ( has_post_thumbnail() ) {
-        ?>
-            <div class="col-md-6">
-                <?php the_post_thumbnail('medium'); ?>
-            </div>
-            <div class="col-md-6">
-        <?php
-        } 
-        else {
-        ?>
-            <div class="col-md-12">
-        <?php
-        }
-        ?>
-
+        <div class="col-md-6">
+            <img class="img-responsive img-border img-left" src="<?php echo get_template_directory_uri(); ?>/img/wcsd-logo-2015.png" alt="">
+        </div>
+        <div class="col-md-6">
         <?php
         // Start the Loop.
         while ( have_posts() ) {
