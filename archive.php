@@ -60,7 +60,7 @@ get_header();
         <div class="col-lg-12 text-center">
             <ul class="pager">
               <li class="previous">&larr; Older</li>
-              <li class="next">&larr; Newer</li>
+              <li class="next">&rarr; Newer</li>
             </ul>
         </div>
     </div>
