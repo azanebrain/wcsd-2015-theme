@@ -35,9 +35,20 @@ get_header();
         ?>
             <div class="col-lg-12 text-center">
                 <?php
+                // If the page has a feature image, display it next to the content
+                // otherwise have a full-width content section
                 if ( has_post_thumbnail() ) {
-                    the_post_thumbnail('medium');
-                } 
+                ?>  
+                <div class="col-md-6">
+                  <?php the_post_thumbnail('medium'); ?>
+                </div>
+                <div class="col-md-6">
+                <?php 
+                } else {
+                ?>
+                <div class="col-md-12">
+                <?php
+                }
                 ?>
                 <h2> 
                     <?php;
@@ -50,6 +61,7 @@ get_header();
                 <a href="<?php the_permalink(); ?>" class="btn btn-default btn-lg">Read More</a>
                 <hr>
               </div>
+            </div>
         <?php
         }
         ?>

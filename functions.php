@@ -25,7 +25,6 @@
  */
 
 function wcsd_setup() { 
-    // This theme uses wp_nav_menu() in two locations.
     register_nav_menus( array(
         'primary'   => __( 'Top primary menu', 'wcsd' ),
     ) );
@@ -40,3 +39,16 @@ function wcsd_scripts() {
     wp_enqueue_style( 'wcsd-fonts', get_stylesheet_directory_uri() . '/css/fonts.css' );
 }
 add_action( 'wp_enqueue_scripts', 'wcsd_scripts' );
+
+function theme_slug_widgets_init() {
+    register_sidebar( array(
+        'name' => 'WCSD Sidebar',
+        'id' => 'wcsd-sidebar',
+        'description' => '"Side"-bar for the WCSD Theme Dev Workshop',
+        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</li>',
+        'before_title'  => '<h2 class="widgettitle">',
+        'after_title'   => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'theme_slug_widgets_init' );
