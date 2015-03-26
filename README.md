@@ -32,12 +32,15 @@ wp_nav_menu() : http://codex.wordpress.org/Function_Reference/wp_nav_menu
 
 - the_post() : https://codex.wordpress.org/Function_Reference/the_post
 
-- Page A: http://wcsd.dev/wp-admin/post.php?post=733&action=edit
+- Page Template
+
+page.PHP
+
+Page A: http://wcsd.dev/wp-admin/post.php?post=733&action=edit
 
 - The Loop: https://codex.wordpress.org/The_Loop
 
 ```php
-
 <?php
 if ( have_posts() ) {
   while ( have_posts() ) {
@@ -52,7 +55,13 @@ if ( have_posts() ) {
 ?>
 ```
 
-- Featured image: https://codex.wordpress.org/Function_Reference/the_post_thumbnail
+- The Post: https://codex.wordpress.org/Function_Reference/the_post
+
+- Featured image
+
+has_post_thumbnail: https://codex.wordpress.org/Function_Reference/has_post_thumbnail
+
+the_post_thumbnail: https://codex.wordpress.org/Function_Reference/the_post_thumbnail
 
 ```php
 <?php
@@ -62,7 +71,44 @@ if ( has_post_thumbnail() ) {
 ?>
 ```
 
-- Archive page: http://wcsd.dev/?cat=38
+- Conditional featured image (extra task)
+
+If the page has a feature image, display it next to the content. Otherwise have a full-width content section
+
+This snippet will get you started:
+
+```html
+<?php if ( {{has post thumbnail}} ) { ?>	
+<div class="col-md-6">
+	{{image}}
+</div>
+<div class="col-md-6">
+<?php 
+} else {
+?>
+<div class="col-md-12">
+<?php
+}
+{{The Loop}}
+?>
+</div>
+```
+
+- Single Template 
+
+single.PHP
+
+- Archive Template
+
+archive.PHP
+
+https://codex.wordpress.org/Creating_an_Archive_Index#The_Template_.28archives.php.29
+
+Post Formats Archive Page: http://wcsd.dev/?cat=38
+
+- Register sidebar: https://codex.wordpress.org/Function_Reference/register_sidebar
+
+- Sidebar.PHP
 
 - Get_sidebar: https://codex.wordpress.org/Function_Reference/get_sidebar
 
