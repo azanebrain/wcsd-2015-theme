@@ -47,6 +47,7 @@ get_header();
                   <a href="<?php the_permalink(); ?>" class="btn btn-default btn-lg">Read More</a>
                   <hr>
                 </div>
+              </div>
           <?php
           }
         } else {

@@ -10,6 +10,12 @@ Based on the [Business Casual Bootstrap static HTML theme](https://github.com/Ir
 
 # Setup instructions
 
+Once your local server is setup and wcsd.dev is created, use the [WordPress Importer](http://wcsd.dev/wp-admin/admin.php?import=wordpress) to import `data.xml`.
+
+Copy this theme demo file to your local file system.
+
+Activate this theme.
+
 # Resources
 
 - Header and footer
@@ -89,7 +95,7 @@ This snippet will get you started:
 <div class="col-md-12">
 <?php
 }
-{{The Loop}}
+{{The Content}}
 ?>
 </div>
 ```
@@ -106,36 +112,61 @@ https://codex.wordpress.org/Creating_an_Archive_Index#The_Template_.28archives.p
 
 Post Formats Archive Page: http://wcsd.dev/?cat=38
 
-- Register sidebar: https://codex.wordpress.org/Function_Reference/register_sidebar
+- Sidebars
 
-- Sidebar.PHP
+Register sidebar: https://codex.wordpress.org/Function_Reference/register_sidebar
 
-- Get_sidebar: https://codex.wordpress.org/Function_Reference/get_sidebar
+Sidebar.PHP
+
+Get_sidebar: https://codex.wordpress.org/Function_Reference/get_sidebar
 
 - Pagination: https://codex.wordpress.org/Pagination
 
-  https://codex.wordpress.org/Function_Reference/posts_nav_link
+Previous and Next: https://codex.wordpress.org/Function_Reference/posts_nav_link
 
-  https://codex.wordpress.org/Function_Reference/previous_posts_link
+- Separate previous and next pagination buttons (extra task)
 
-  https://codex.wordpress.org/Function_Reference/next_posts_link
+Just Previous: https://codex.wordpress.org/Function_Reference/previous_posts_link
+
+Just Next: https://codex.wordpress.org/Function_Reference/next_posts_link
+
+Check to see if there is a previous / next: get_previous_posts_link() & get_next_posts_link()
+
+Create separate previous and next buttons if the current
+
+This snippet will get you started:
 
 ```php
 <?php 
-if ( get_previous_posts_link() ) {
+if ( {{there are previous posts}} ) {
 ?>
-    <li class="previous"><?php previous_posts_link( '&larr; Older' ) ?></li>
+    <li class="previous"><?php {{display the link for previous posts and output '&larr; Older'}} ) ?></li>
 <?php 
 }
-
-if ( get_next_posts_link() ) {
+if ( {{there are next posts links}} ) {
 ?>
-    <li class="next"><?php next_posts_link( 'Newer &rarr;' ) ?></li>
+    <li class="next"><?php {{display the link for next posts and output '&rarr; Newer'}} ?></li>
 <?php 
 }
 ?>
 ```
 
-- Front Page
+- Front Page: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
-- WP_Query
+https://codex.wordpress.org/Template_Hierarchy#Front_Page_display
+
+front-page.php
+
+- WP_Query(): https://codex.wordpress.org/Class_Reference/WP_Query
+
+Parameters: https://codex.wordpress.org/Class_Reference/WP_Query#Parameters
+
+WP_Query Generator: http://generatewp.com/wp_query/
+
+wp_reset_postdata() : https://codex.wordpress.org/Function_Reference/wp_reset_postdata
+
+A sample WP_Query() can be found in the Front Page template
+
+- 
+
+- 
