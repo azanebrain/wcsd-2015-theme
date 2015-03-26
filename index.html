@@ -402,20 +402,49 @@ if ( have_posts() ) {
           </section>  
           <section>
             <h2>Defining &amp; Using</h2>
+            <p>Defined in functions.PHP</p>
+
+<pre><code data-trim class="php">
+function wcsd_setup() { 
+  register_nav_menus( array(
+    'primary'   => __( 'Top primary menu', 'wcsd' ),
+  ) );
+}
+add_action( 'after_setup_theme', 'wcsd_setup' );
+</code></pre>
+
+						<p>Used in header.PHP</p>
+<pre><code data-trim class="php">
+$args = array(
+    'theme_location' => 'primary',
+    'menu_class'     => 'nav navbar-nav',
+);
+wp_nav_menu( $args );
+</code></pre>
+
+					<aside class="notes">
+						Creating menus involves two steps: registering and outputting
+					</aside>
+
           </section>   
           <section data-background="img/task-bg.jpg" class="task">
             <h2>Task:</h2>
-            <p>Activate the menu</p>
+            <p>Activate the menu by removing the hard-coded links in header.PHP, and uncommenting the WP function</p>
           </section>        
         </section>
 
         <section>
           <section>
             <h2>Footer.PHP</h2>
+            <p>Very similar to header.PHP</p>
+            <aside class="notes">
+            	The footer acts like the yang to header.PHP's yin
+            	It similarly wraps the HTML of the page, and provides a space to add meta information about the site
+            </aside>
           </section>  
           <section data-background="img/task-bg.jpg" class="task">
             <h2>Task:</h2>
-            <p>Add the Admin Bar</p>
+            <p>Add the Admin Bar through wp_footer()</p>
           </section>        
         </section>
 
@@ -423,30 +452,134 @@ if ( have_posts() ) {
           <section>
             <h2>Main Content</h2>
             <p><a href="http://wcsd.dev/?page_id=733">Page A</a></p>
+            <aside class="notes">
+            	We'll be using Page A to dive into how the page template works
+            </aside>
           </section>  
-          <section>
-            <h2>The page template</h2>
-          </section>    
-          <section>
-            <h2>The Loop</h2>
-          </section>   
           <section data-background="img/task-bg.jpg" class="task">
             <h2>Task:</h2>
-            <p>Featured image</p>
+            <p>Rename page-sample.PHP to page.PHP</p>
+            <aside class="notes">
+            	Now, once we reload the page, we will see that the page template is being used instead of index
+            	What The File will also show us the template
+            </aside>
+          </section>   
+          <section>
+            <h2>The Loop</h2>
+            <p>The key concept of displaying posts and pages in WordPress</p>
+<pre><code data-trim class="php">
+&lt;?php
+if ( have_posts() ) {
+  while ( have_posts() ) {
+      the_post();
+      // the_content();
+      // the_excerpt();
+      // the_title();
+      // the_permalink();
+      // ...
+  }
+}
+?>
+</code></pre>
+            <aside class="notes">
+            	The Loop takes care of what posts to grab for each template
+            </aside>
+          </section>  
+          <section>
+            <h2>the_post()</h2>
+            <p>Sets up the current post object</p>
+            <p>It is the first declaration in The Loop</p>
+<pre><code data-trim class="php">
+while ( have_posts() ) {
+    the_post();
+    ...
+</code></pre>
+          </section>   
+          <section>
+            <h2>Featured Images &amp; Thumbnails</h2>
+            <p>Define in functions.PHP</p>
+<pre><code data-trim class="php">
+add_theme_support( 'post-thumbnails' ); 
+</code></pre>
+            <p>Check if the post has an image</p>
+<pre><code data-trim class="php">
+if ( has_post_thumbnail() ) { ... }
+</code></pre>
+						<p>Use anywere</p>
+<pre><code data-trim class="php">
+if ( the_post_thumbnail() ) { ... }
+</code></pre>
+            <aside class="notes">
+            	Featured images are an aspect that your theme either supports or not
+            	To really use thumbnails, you need to follow the 3 steps listed here
+            </aside>
+          </section>    
+          <section data-background="img/task-bg.jpg" class="task">
+            <h2>Task:</h2>
+            <p>Add and display a <strong>medium sized</strong> featured image on <a href="http://wcsd.dev/wp-admin/post.php?post=733&action=edit" target="_blank">Page A</a></p>
+            <p>Extra: If the post has a featured image, display two columns in the content area instead of one</p>
           </section>        
         </section>
 
         <section>
           <section>
+            <h2>Single Template</h2>
+            <p>Just like the Page template but used for individual posts</p>
+            <p>single.PHP</p>
+            <aside class="notes">
+            	The Single template is almost the exact same as the Page template
+            	The difference is that Single is used for posts, while Page is used for pages
+            </aside>
+          </section>    
+        </section>
+
+        <section>
+          <section>
             <h2>Archive Template</h2>
-            <p><a href="http://wcsd.dev/?cat=38">Archive Page</a></p>
+            <p><a href="http://wcsd.dev/?cat=38" target="_blank">'Post Formats' Archive Page</a></p>
+            <p>Same loop, different function</p>
+            <p>archive.PHP</p>
+            <aside class="notes">
+            	Notice how on the Archive template, The Loop doesn't go through one post. It displays every post that meets the criteria of the query
+            </aside>
           </section>    
         </section>
 
         <section>
           <section>
             <h2>Sidebars</h2>
+            <p>Not actually on the side</p>
+            <aside class="notes">
+            	Sidebars let us utilize widget areas
+            	They're not actually on the side
+            </aside>
+          </section> 
+          <section>
+            <h2>Sidebar usage</h2>
+            <p>Register</p>
+<pre><code data-trim class="php">
+register_sidebar( array( ... ) );
+</code></pre>
+            <p>sidebar.PHP</p>
+<pre><code data-trim class="php">
+if ( is_active_sidebar( 'sidebar-name' ) ) {
+    dynamic_sidebar( 'sidebar-name' );
+}
+</code></pre>
+            <p>Use anywhere</p>
+<pre><code data-trim class="php">
+get_sidebar()
+</code></pre>
+            <aside class="notes">
+            	Sidebars let us utilize widget areas
+            	They're not actually on the side
+            </aside>
           </section>    
+          <section data-background="img/task-bg.jpg" class="task">
+            <h2>Task:</h2>
+            <p>Uncomment the sidebar in footer.PHP</p>
+            <p>Display the WCSD sidebar instead of the generic one</p>
+          </section>   
         </section>
 
         <section>
