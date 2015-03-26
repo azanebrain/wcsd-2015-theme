@@ -635,7 +635,9 @@ get_sidebar()
 				<code>functions.php</code> works like <code>style.css</code> in a child theme. It adds to and modifies the parent's <code>functions.php</code>. You don't make a copy of it in your child theme folder like you do with template files, you start a new one.
 			</p>
 
-<pre><code>&lt;?php
+<pre><code data-trim class="php">
+&nbsp;
+&lt;?php
 /**
 * My theme functions and definitions
 */
@@ -643,9 +645,9 @@ get_sidebar()
 (all your functions go here)
 
 ?&gt;
+&nbsp;
 </code></pre>
 		</section>	
-		
 		
 		<section>
 			<h2>Adding functionality</h2>
@@ -656,15 +658,13 @@ get_sidebar()
 				You can tell your theme to load external files in <code>functions.php</code>. It helps you keep <code>functions.php</code> from being overloaded with too much code.
 			</p>
 			
-<pre>
-<code>
+<pre><code data-trim class="php">
+&nbsp;
 // Load a file from the inc folder
 require_once 'inc/my-file.php';
-
-</code>
-</pre>
+&nbsp;
+</code></pre>
 		</section>	
-		
 		
 		<section>
 			<h2>Adding functionality</h2>
@@ -694,24 +694,22 @@ require_once 'inc/my-file.php';
 			</p>
 
 		</section>	
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
 				
 			<h4>Hooks, Action and Filters</h4>
 			
 			<h4><a href="http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters" target="_blank">codex.wordpress.org says:</a></h4>
-			<blockquote>
+
 				Hooks are provided by WordPress to allow your plugin to 'hook into' the rest of WordPress...There are 2 kinds of hooks: 
 				<ul>
-					<li>Actions: A custom PHP function defined in your plugin (or theme) and hooked, i.e. set to respond, to specific events that take place in WordPress. </li>
-					<li>Filters: Functions that WordPress passes data through, at certain points in execution, just before taking some action with the data </li>
+					<li><em>Actions</em>: A custom PHP function defined in your plugin (or theme) and hooked, i.e. set to respond, to specific events that take place in WordPress. </li>
+					<li><em>Filters</em>: Functions that WordPress passes data through, at certain points in execution, just before taking some action with the data </li>
 				</ul>						
-			</blockquote>
+
 		</section>	
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
 				
@@ -721,10 +719,7 @@ require_once 'inc/my-file.php';
 				Hooks, Actions and Filters allow you to change core WordPress functionality without breaking it.
 			</p>
 		</section>	
-		
-		
-		
-		
+	
 		<section>
 			<h2>Adding functionality</h2>
 				
@@ -744,8 +739,7 @@ require_once 'inc/my-file.php';
 				<li>And hundreds of other things</li>
 			</ul>
 		</section>	
-		
-		
+	
 		<section>
 			<h2>Adding functionality</h2>
 				
@@ -755,8 +749,7 @@ require_once 'inc/my-file.php';
 				<strong>Actions</strong> - A hook that makes something new happen when a WordPress function is triggered.
 			</p>
 		</section>	
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
 				
@@ -766,9 +759,7 @@ require_once 'inc/my-file.php';
 				<strong>Filters</strong> - A hook that modifies a WordPress function when it is triggered.
 			</p>
 		</section>	
-		
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
 				
@@ -776,12 +767,11 @@ require_once 'inc/my-file.php';
 			
 			<h4><a href="http://wordpress.tv/2013/07/31/tracy-levesque-what-you-dont-know-you-can-do-wordpress-development-for-absolutely-everyone/" target="_blank">Visual Demo of Hooks, Actions and Filters</a></h4>
 			<p>
-				From my talk at WordCamp San Francisco.<br />
+				From Tracy Levesque's talk at WordCamp San Francisco.<br />
 				19 minutes in.
 			</p>
 		</section>	
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
 				
@@ -793,8 +783,7 @@ require_once 'inc/my-file.php';
 
 			<p><br />Check out the WordPress Codex <a href="http://codex.wordpress.org/Function_Reference/" target="_blank">Entire Function Reference</a></p>
 		</section>		
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
 				
@@ -803,17 +792,17 @@ require_once 'inc/my-file.php';
 			<p>
 				You can add custom images sizes (in addition to the default thumb, medium, large and original).
 			</p>
-<pre>
-<code>				
+
+<pre><code data-trim class="php">
+&nbsp;			
 add_image_size( 'my-img', 400, 400 ); // soft proportional crop mode
 add_image_size( 'other-img', 200, 269, true ); // hard crop mode
+&nbsp;
+</code></pre>
 
-</code>
-</pre>
 			<p><br />Check out the WordPress Codex <a href="http://codex.wordpress.org/Function_Reference/add_image_size" target="_blank">add image size</a></p>
 		</section>		
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
 				
@@ -822,15 +811,13 @@ add_image_size( 'other-img', 200, 269, true ); // hard crop mode
 			<p>
 				In your template you can use a tag to load your custom version of featured images.
 			</p>
-<pre>
-<code>				
+<pre><code data-trim class="php">
+&nbsp;			
 &lt;?php echo get_the_post_thumbnail($page->ID, 'my-img'); ?&gt;
-
-</code>
-</pre>
+&nbsp;
+</code></pre>
 		</section>		
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
 				
@@ -844,8 +831,7 @@ add_image_size( 'other-img', 200, 269, true ); // hard crop mode
 				You can use the handy <a href="http://wordpress.org/plugins/regenerate-thumbnails/" target="_blank"><strong>Regenerate Thumbnails</strong></a> plugin to create the custom sizes of your previously uploaded images.
 			</p>
 		</section>	
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
 				
@@ -858,35 +844,35 @@ add_image_size( 'other-img', 200, 269, true ); // hard crop mode
 			<p><br />Check out the WordPress Codex <a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_style" target="_blank">wp enqueue style</a> and
 			<a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_script" target="_blank">wp enqueue script</a></p>
 		</section>
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
 				
 			<h4>wp_enqueue_style / wp_enqueue_script</h4>
 			
 			<p>Load WordPress' core copy of jQuery. If you're using jQuery with your theme you should always use WP's copy vs. an external version. </p>
-<pre>
-<code>	
+
+<pre><code data-trim class="php">	
+&nbsp;
 function my_scripts() {
 wp_enqueue_script( 'jquery');
 }
 
 add_action( 'wp_enqueue_scripts', 'my_scripts' );
+&nbsp;
+</code></pre>
 
-</code>
-</pre>
 		</section>
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
 				
 			<h4>wp_enqueue_style / wp_enqueue_script</h4>
 			
 			<p>Load a script that depends on jQuery. Bootstrap is a framework that needs jQuery to run. The code below will load both jQuery and Bootstrap JS.</p>
-<pre>
-<code>	
+
+<pre><code data-trim class="php">
+&nbsp;
 function add_bootstrap() {
 wp_enqueue_script(
 'add-bootstrap-script',
@@ -896,20 +882,21 @@ array( 'jquery' )
 }
 
 add_action( 'wp_enqueue_scripts', 'add_bootstrap' );
+&nbsp;
+</code></pre>
 
-</code>
-</pre>
 		</section>
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
 				
 			<h4>wp_enqueue_style / wp_enqueue_script</h4>
 			
 			<p>Load a stylesheet and a script.</p>
-<pre>
-<code>function add_bootstrap() {
+
+<pre><code data-trim class="php">
+&nbsp;
+function add_bootstrap() {
 wp_enqueue_script(
 'add-bootstrap-script',
 get_stylesheet_directory_uri() . '/inc/bootstrap/js/bootstrap.min.js',
@@ -922,11 +909,11 @@ array(), 'all' );
 }
 
 add_action( 'wp_enqueue_scripts', 'add_bootstrap' );
-</code>
-</pre>
+&nbsp;
+</code></pre>
+
 		</section>
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
 				
@@ -939,8 +926,7 @@ add_action( 'wp_enqueue_scripts', 'add_bootstrap' );
 			
 			<p><br />Check out the WordPress Codex <a href="http://codex.wordpress.org/Function_Reference/register_nav_menus" target="_blank">register nav menus</a></p>
 		</section>	
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
 				
@@ -949,17 +935,17 @@ add_action( 'wp_enqueue_scripts', 'add_bootstrap' );
 			<p> 
 				Use <code>register_nav_menus</code> to register your menus.
 			</p>
-<pre>
-<code>	
+
+<pre><code data-trim class="php">
+&nbsp;
 register_nav_menus( array(
 'footer-nav' => 'Footer Menu',
 ) );
+&nbsp;
+</code></pre>
 
-</code>
-</pre>
 		</section>		
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
 				
@@ -968,16 +954,16 @@ register_nav_menus( array(
 			<p> 
 				Use the <code>wp_nav_menu</code> tag to assign a menu to a location in your theme.
 			</p> 
-<pre>
-<code>	
-&lt;?php wp_nav_menu( array( 'theme_location' => 'footer-nav' ) ); ?&gt;
 
-</code>
-</pre>
+<pre><code data-trim class="php">
+&nbsp;
+&lt;?php wp_nav_menu( array( 'theme_location' => 'footer-nav' ) ); ?&gt;
+&nbsp;
+</code></pre>
+
 			<p><br />Check out the WordPress Codex <a href="http://codex.wordpress.org/Function_Reference/wp_nav_menu" target="_blank">wp nav menu</a></p>
 		</section>		
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
 				
@@ -986,15 +972,14 @@ register_nav_menus( array(
 			<p> 
 				You can also use <code>wp_nav_menu</code> to load any custom menu you've created in Appearance > Menus. You can use the menu's ID, slug, or name.
 			</p> 
-<pre>
-<code>	
-&lt;?php wp_nav_menu( array('menu' => '2' )); ?&gt;
 
-</code>
-</pre>
+<pre><code data-trim class="php">
+&nbsp;
+&lt;?php wp_nav_menu( array('menu' => '2' )); ?&gt;
+&nbsp;
+</code></pre>
+
 		</section>	
-		
-		
 		
 		<section>
 			<h2>Adding functionality</h2>
@@ -1009,7 +994,6 @@ register_nav_menus( array(
 			<p><br />Check out the WordPress Codex <a href="http://codex.wordpress.org/Function_Reference/register_sidebar" target="_blank">register sidebar</a></p>
 		</section>		
 		
-		
 		<section>
 			<h2>Adding functionality</h2>
 				
@@ -1018,8 +1002,9 @@ register_nav_menus( array(
 			<p> 
 				Use <code>register_sidebar</code> to register your widgetized areas.
 			</p> 
-<pre>
-<code>	
+
+<pre><code data-trim class="php">	
+&nbsp;
 register_sidebar(array(
 'name' => __( 'Header Widget Area' ),
 'id' => 'headerwidget',
@@ -1029,30 +1014,27 @@ register_sidebar(array(
 'before_title' =&gt; '&lt;h4 class="headerwidgettitle"&gt;',
 'after_title' =&gt; '&lt;/h4&gt;',
 ));
+&nbsp;
+</code></pre>
 
-</code>
-</pre>
 		</section>		
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
-				
 			<h4>dynamic_sidebar</h4>
-			
 			<p> 
 				Use the <code>dynamic_sidebar</code> tag to assign a widgetized area to a location in your theme.
 			</p> 
-<pre>
-<code>	
-&lt;?php dynamic_sidebar( 'headerwidget' ); ?&gt;
 
-</code>
-</pre>
+<pre><code data-trim class="php">
+&nbsp;
+&lt;?php dynamic_sidebar( 'headerwidget' ); ?&gt;
+&nbsp;
+</code></pre>
+
 			<p><br />Check out the WordPress Codex <a href="http://codex.wordpress.org/Function_Reference/dynamic_sidebar" target="_blank">dynamic sidebar</a></p>
 		</section>		
-		
-		
+
 		<section>
 			<h2>Adding functionality</h2>
 				
@@ -1061,8 +1043,9 @@ register_sidebar(array(
 			<p> 
 				Use the <code>dynamic_sidebar</code> tag along with conditional tags to load certain widget areas on certain pages.
 			</p> 
-<pre>
-<code>
+
+<pre><code data-trim class="php">
+&nbsp;
 if(is_page( 'about' )){
 dynamic_sidebar( 'aboutsidebar' );
 }
@@ -1070,13 +1053,12 @@ dynamic_sidebar( 'aboutsidebar' );
 if(is_page( 'contact' )){
 dynamic_sidebar( 'contactsidebar' );
 }
+&nbsp;
+</code></pre>
 
-</code>
-</pre>
 			<p>View <a href="https://github.com/TheTracyL/GDI-Code-Samples/blob/master/sidebar.php" target="_blank">the code to make this work for Twentythirteen</a></p>
 		</section>	
-		
-		
+
 		<section>
 			<h2>Exercise time!</h2>
 			<h3>Add some functionality to your theme!</h3>
