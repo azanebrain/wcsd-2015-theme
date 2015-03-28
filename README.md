@@ -169,4 +169,30 @@ A sample WP_Query() can be found in the Front Page template
 
 - 
 
-- 
+# What's next for you, young padawan?
+
+You've taken the first steps towards being an awesome WordPress theme developer, but there is still a lot to learn. Use these concepts to further your curriculum and make awesome WordPress themes:
+
+- The author.php template: Now that you know how templating works, try to make a page for authors. Have links on archive and post pages to the author's page. Display the author's name in different formats. Get the author's avatar
+
+- Category Templates: They are similar to Archive Templates but can be customized to specific categories and are evaluated earlier in the template hierarchy.
+
+https://codex.wordpress.org/Category_Templates
+
+- Custom post type templates: You can easily change how custom post types are handled by make new templates for them, such as: single-post_type_name.php
+
+https://codex.wordpress.org/Post_Type_Templates#Custom_Post_Type_Templates
+
+- Search.php: Use this template to show search results. Review the sample and see how you can modify it and add pagination.
+
+https://codex.wordpress.org/Creating_a_Search_Page#Creating_a_Search_Page_Template
+
+WordPress' default search engine is pretty lame. [Relvanssi](https://wordpress.org/plugins/relevanssi/) is a great plugin for making your WP site more searchable.
+
+- Point and Click theme customization: The back end user interface of WordPress is what makes it the best CMS in existence. Giving your users the ability to modify features of the site such as colors, banners, and 
+
+You might have used a theme that has a "Theme Options" panel. This method has been misused by many developers so the WP Org suggests using the Theme Customizer.
+
+The API is tricky since it balances front end input and back end interface menus, but once you get the hang of it you will be able to deliver premium themes.
+
+https://codex.wordpress.org/Theme_Customization_API
