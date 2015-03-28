@@ -342,6 +342,10 @@
 
 				<section>
 					<h2>III: Integrating your HTML &amp; WP Tags</h2>
+					<aside class="notes">
+						How much have you learned?
+						<br>ARE YOU EXCITED!!?
+					</aside>
 				</section>
 
 				<section>
@@ -409,7 +413,8 @@
 						<aside class="notes">
 							wp_head() helps display the meta content for your theme. Right now we're just going to look at its basic functionality
 							<br>* Dev tools in your browser
-							<br>- If I comment out wp_head() and reload, we'll see a bunch of meta code disappears
+							<br>- Open up the resources panel and the page to see the meta
+							<br>- Comment out wp_head() and reload: we'll see a bunch of meta code disappears
 							<br>- This function is used by other WP functions in your theme or plugins to output data right in here. Suzette will go into the details in the next section
 						</aside>
 					</section>          
@@ -432,13 +437,17 @@
 </code></pre>
 						</div>
 						<aside class="notes">
-							Since your theme can be anywhere in your file system, this function outputs a direct path to it
+							Your theme can be anywhere in your file system and named anything
+							<br>- This function outputs a direct path to it
 							<br>* If we look at all of the broken links in our console, we'll see it's trying to access them at the root of the site. But they're in /wp-content/themes/wcsd-2015-theme
 						</aside>
 					</section>   
 					<section data-background="img/task-bg.jpg" class="task">
 						<h2>Task:</h2>
 						<p>Use get_template_directory() to fix the broken links to scripts and styles</p>
+						<aside class="notes">
+							Tip: Don't forget your PHP tags
+						</aside>
 					</section>        
 				</section>
 
@@ -504,11 +513,14 @@ wp_nav_menu( $args );
 					<section>
 						<h2>Main Content</h2>
 						<p><a href="http://wcsd.dev/?page_id=733">Page A</a></p>
-						<p class="fragment">Foolish page! Use the right template
-							[TODO: IMG ame of thrones image?]</p>
+						<div class="fragment">
+							<p>Foolish page! Use the right template</p>
+							<img src="img/foolishpage.jpg" alt="">
+						</div>
 						<aside class="notes">
 							We'll be using Page A to dive into how the page template works
 							<br>* Open the link and see how it still loads the index template
+							<br>- We are missing a page template file
 						</aside>
 					</section>  
 					<section data-background="img/task-bg.jpg" class="task">
@@ -545,6 +557,21 @@ if ( have_posts() ) {
 						</aside>
 					</section>  
 					<section>
+						<h2>have_posts()</h2>
+						<p>If: If there are posts</p>
+						<p>While: Loop through each post</p>
+<pre><code data-trim class="php">
+if ( have_posts() )  {
+	while ( have_posts() ) { ... }
+}
+</code></pre>
+						<aside class="notes">
+							This function lets us loop through every post that is returned
+							<br>- On our page template, that's just the current page
+							<br>- Later we'll see how this can return many posts
+						</aside>
+					</section> 
+					<section>
 						<h2>the_post()</h2>
 						<p>Sets up the current post object</p>
 						<p>It is the first declaration in The Loop</p>
@@ -555,6 +582,8 @@ while ( have_posts() ) {
 </code></pre>
 						<aside class="notes">
 							This function will let us use aspects of the post like its title, permalink, featured image, etc
+							<br>- Without it WordPress will think we're dealing with different content
+							<br>- Make sure it's the first thing you define because you don't want to forget it
 						</aside>
 					</section>   
 					<section>
@@ -569,11 +598,15 @@ if ( has_post_thumbnail() ) { ... }
 </code></pre>
 						<p>Use anywere</p>
 <pre><code data-trim class="php">
-if ( the_post_thumbnail() ) { ... }
+if ( has_post_thumbnail() ) { 
+	the_post_thumbnail();
+}
 </code></pre>
 						<aside class="notes">
-							Featured images are an aspect that your theme either supports or not
-							<br>- To really use thumbnails, you need to follow the 3 steps listed here
+							Kind of similar to menus, BUT:
+							<br>- Define that our theme supports this feature
+							<br>- Within our template, check to see if the post even has one
+							<br>- Then output it
 						</aside>
 					</section>    
 					<section data-background="img/task-bg.jpg" class="task">
@@ -594,21 +627,6 @@ if ( the_post_thumbnail() ) { ... }
 						<aside class="notes">
 							The Single template is almost the exact same as the Page template
 							<br>- The difference is that Single is used for posts, while Page is used for pages
-						</aside>
-					</section>    
-				</section>
-
-				<section>
-					<section>
-						<h2>Archive Template</h2>
-						<p><a href="http://wcsd.dev/?cat=38" target="_blank">'Post Formats' Archive Page</a></p>
-						<p>Same loop, different functionality</p>
-						<p>archive.PHP</p>
-						<aside class="notes">
-							View the page
-							<br>- View the code
-							<br>- Notice how on the Archive template, The Loop doesn't go through one post. It displays every post that meets the criteria of the query ('Post Formats' cat)
-							<br>- This becomes very important later when we get into wp_query
 						</aside>
 					</section>    
 				</section>
@@ -651,11 +669,27 @@ get_sidebar()
 
 				<section>
 					<section>
+						<h2>Archive Template</h2>
+						<p><a href="http://wcsd.dev/?cat=38" target="_blank">'Post Formats' Archive Page</a></p>
+						<p>Same loop, different functionality</p>
+						<p>archive.PHP</p>
+						<aside class="notes">
+							View the page
+							<br>- View the code
+							<br>- Notice how on the Archive template, The Loop doesn't go through one post. It displays every post that meets the criteria of the query ('Post Formats' cat)
+							<br>- This becomes very important later when we get into wp_query
+						</aside>
+					</section>    
+				</section>
+
+				<section>
+					<section>
 						<h2>Pagination</h2>
 						<p>Acts as a Loop limiter</p>
 						<p class="fragment">posts_nav_link() <br>vs<br>previous_posts_link() &amp; next_posts_link</p>
 						<aside class="notes">
 							You can think of pagination as something that limits the returnset of The Loop
+							<br>- Gives us the ability to separate the content into smaller chunks and help load time
 							<br>- By default, WordPress sets this to 10 (in Settings &gt; Reading)
 							<br>* Display both, or display one
 						</aside>
@@ -689,10 +723,11 @@ get_sidebar()
 						<aside class="notes">
 							TODO: depending on what is covered before, this content will change
 							<br>* WP Query is The Loop you can put anywhere and tweak it to your needs
+							<br>- Use anywhere you want
 						</aside>
 					</section>
 					<section>
-						<h2>Anatomy of WP_Query()</h2>
+						<p>Anatomy of WP_Query()</p>
 <pre><code data-trim class="php">
 $the_query = new WP_Query( array( /* query parameters */ ) );
 // The Loop
@@ -709,7 +744,7 @@ if ( $the_query->have_posts() ) {
 // Restore original Post Data
 wp_reset_postdata();
 </code></pre>
-						[TODO: IMG spiderman]
+						<img src="img/spiderman.jpg" alt="SpiderMan: With great power comes great responsibility">
 						<aside class="notes">
 							This is a straight forward WP_Query.
 							<br>- It's small, but like Spiderman, has great responsibility
@@ -780,6 +815,7 @@ wp_reset_postdata();
 					<section>
 						<h2>WP Query Generator</h2>
 						<p><a href="http://generatewp.com/wp_query/">GenerateWP.com/wp_query</a></p>
+						<p class="fragment">Don't rely on it. Use it to help launch yourself forward.</p>
 					</section>
 				</section>
 
