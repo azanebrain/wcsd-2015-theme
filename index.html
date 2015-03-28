@@ -203,116 +203,208 @@
 
 				<section>
 					<h2>WordPress File Structure</h2>
-					[image of sublime tree]
+					<img src="img/wp-tree.png" alt="" class="no-border">
 					
 				</section>
 
 				<section>
 					<h2>Core</h2>
-					[admin]
+					<img src="img/wp-admin.png" alt="" class="no-border">
 					
 				</section>
 
 				<section>
-					<h2>Updates</h2>
-					[updates screenshot]
+					<section>
+						<h2>Plugins</h2>
+						<img src="img/wp-plugins1.png" alt="" class="no-border">
+					</section>
+
+					<section>
+						<h2>Updates</h2>
+						<img src="img/wp-plugins2.png" alt="" class="no-border">
+					</section>
 					
 				</section>
 
 				<section>
-					<h2>Plugins</h2>
-					[plugins screenshot default, full of plugins]
+					<section>
+						<h2>Media</h2>
+						<img src="img/wp-media1.png" alt="" class="no-border">
+					</section>
 					
+					<section><h2>Media</h2><img src="img/wp-media2.png" alt="" class="no-border"></section>
+					<section><h2>Media</h2><img src="img/wp-media3.png" alt="" class="no-border"></section>
 				</section>
 
 				<section>
-					<h2>Media</h2>
-					[screenshot of library, detail]
+					<section>
+						<h2>Content Types</h2>
+						<p>The important thing to remember is that content can be broken into two types:</p>
+
+						<h4 class="fragment"><a href="#/21/1">Date/Time-based (Posts, Non-Heirarchical)</a></h4>
+						<h4 class="fragment"><a href="#/21/2">Sortable (Pages, Heirarchical)</a></h4>
+					</section>
 					
+					<section>
+						<h2>Post (non-hierarchcal)</h2>
+						<img src="img/wp-post.png" alt="" class="no-border">
+					</section>
+					<section>
+						<h2>Page (hierarchcal)</h2>
+						<img src="img/wp-page.png" alt="" class="no-border">
+					</section>
 				</section>
 
 				<section>
-					<h2>Content Types</h2>
-					[sidebyside of page vs. post vs. Events for example]
-					talk about the concept
 					
+					<section>
+						<h2>Taxonomies</h2>
+						<p>Something similar applies to taxonomies. You need to remember that there are two types:</p>
+
+						<h4 class="fragment"><a href="#/21/1">Shotgun-style (Tags, Non-Heirarchical)</a></h4>
+						<h4 class="fragment"><a href="#/21/2">Sortable (Categories, Heirarchical)</a></h4>
+					</section>
+					
+					<section>
+						<h2>Tags (non-hierarchcal)</h2>
+						<img src="img/wp-tag.png" alt="" class="no-border">
+					</section>
+					<section>
+						<h2>Categories (hierarchcal)</h2>
+						<img src="img/wp-cat.png" alt="" class="no-border">
+					</section>
+
 				</section>
 
 				<section>
-					
-					<h2>Taxonomies</h2>
-					[screenshot of defaults, events for examples]
+					<section>
+						<h2>The Loop</h2>
+<pre><code data-trim class="html">
+&lt;?php if ( have_posts() ) : while ( have_post() ) : the_post(); ?>
+	
+	<!-- You can use template tags here -->
+	&lt;?php the_title(); ?>
 
+	<!-- The world is yours! -->
+	&lt;?php the_content(); ?>
+
+&lt;?php endwhile; endif; ?>
+</code></pre>
+					</section>
+
+					<section>
+						<h2>The Loop (other view)</h2>
+<pre><code data-trim class="html">
+&lt;?php if ( have_posts() ) { 
+	
+	while ( have_post() ) { 
+	
+		<!-- You can use template tags here -->
+		&lt;?php the_title(); ?>
+
+		<!-- The world is yours! -->
+		&lt;?php the_content(); ?>
+
+	&lt;?php } ?>
+
+&lt;?php } ?>
+</code></pre>
+						<p>(note: using bracket notation is most helpful when coding in raw php.)</p>
+					</section>
 				</section>
 
 				<section>
-					<h2>The Loop</h2>
-					
-				<pre><code data-trim class="php">
-				if ( have_posts() ) {
-					while ( have_posts() ) {
-						the_post(); 
-						//
-						// Post Content here
-						//
-					} // end while
-				} // end if
-				</code></pre>
+					<section>
+						<h2>The Loop 2.0</h2>
+						<p>Putting multiple loops on a page is easily accomplished with your handy-dandy <code>WP_Query()</code> function.</p>
+					</section>
 
-					[here's the formatting using highlight.js - looks awesome!]
-				</section>
+					<section>
+						<h4><code>WP_Query()</code> allows you to define the parameters of your nested loop</h4>
+<pre><code>$the_query = new WP_Query( array( /* query parameters */ ) );
 
-				<section>
-					<h2>The Loop 2.0</h2>
-					*WP_Query
+if ( $the_query->have_posts() ) : 
+	
+		while ( $the_query->have_posts() ) :
+			
+			$the_query->the_post();
+			
+			// The loop is running
+			the_title();
+
+		endwhile; 
+
+endif;
+
+// finally, reset the default loop data
+wp_reset_postdata();
+
+</code></pre>
+					</section>
 					
 				</section>
 
 				<section>
 					<h2>Diving into Theming</h2>
-					index.html
 					
 				</section>
 
 				<section>
-					<h2>index.html</h2>
-					
+					<h2>wp-config.php</h2>
+					<p>This file is more important than you could know.</p>
+					<img src="img/wp-config.png" alt="" class="no-border">
 					
 				</section>
 
 				<section>
 					<h2>style.css</h2>
-					
+					<p>And this is all you need to create a theme.</p>
+					<img src="img/wp-style.png" alt="" class="no-border">
 					
 				</section>
 
 				<section>
 					<h2>index.php</h2>
-					
+					<p>This is the most basic theme file - the flallback for if no more specific file is found</p>
+					<img src="img/wp-index.png" alt="" class="no-border">
 					
 				</section>
 
 				<section>
 					<h2>header.php &amp; footer.php</h2>
-					
-					
+					<p>These two files provide the wrapper for your theme, and get <code>wp_head()</code> &amp; <code>wp_foot()</code> running</p>
+					<img src="img/wp-header.png" alt="" class="no-border">
 				</section>
 
 				<section>
 					<h2>Template Hierarchy</h2>
-					*image here
+					<p>This is complicated. But not really.. But it is.</p>
+					<a href="https://codex.wordpress.org/images/9/96/wp-template-hierarchy.jpg" target="_blank"><img src="img/wp-template-hierarchy.jpg" alt="" class="no-border"></a>
 					
 				</section>
 
 				<section>
-					<h2>revisiting index.php</h2>
-					*page &amp; post single
+					<section>
+						<h2>page.php &amp; single.php</h2>
+						<p>This is the most basic level of differentiation between content type templates.</p>
+					</section>
+					<section>
+						<h2>page.php</h2>
+						<p>This is the basic template for pages (le duh.)</p>
+						<img src="img/wp-page-php.png" alt="" class="no-border">
+					</section>
+
+					<section>
+						<h2>single.php</h2>
+						<p>This is the basic template for posts.</p>
+						<img src="img/wp-single.png" alt="" class="no-border">
+					</section>
 					
 				</section>
 
 				<section>
 					<h2>front-page.php</h2>
-					
+					<p>This displays the front page of the site (but only if the file is present). This can also be accomplished in other ways, but it's good to know about.</p>
 					
 				</section>        
 
