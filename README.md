@@ -12,9 +12,15 @@ Based on the [Business Casual Bootstrap static HTML theme](https://github.com/Ir
 
 Once your local server is setup and wcsd.dev is created, use the [WordPress Importer](http://wcsd.dev/wp-admin/admin.php?import=wordpress) to import `data.xml`.
 
-Copy this theme demo file to your local file system.
+Copy this theme demo file to your local file system (/wp-content/themes/wcsd-2015-theme).
 
 Activate this theme.
+
+# Authors
+
+- [AJ Zane](https://twitter.com/azanebrain)
+- [Rich Sherman](https://twitter.com/richorrichard)
+- [Suzette Franck](https://twitter.com/suzette_franck)
 
 # Resources
 
