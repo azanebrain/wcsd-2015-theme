@@ -72,7 +72,7 @@ the_post_thumbnail: https://codex.wordpress.org/Function_Reference/the_post_thum
 ```php
 <?php
 if ( has_post_thumbnail() ) {
-    the_post_thumbnail('medium');
+    the_post_thumbnail();
 } 
 ?>
 ```
