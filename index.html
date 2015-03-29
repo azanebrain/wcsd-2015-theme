@@ -1125,12 +1125,12 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 function wcsd_widgets_init() {
 
 	register_sidebar( array(
-		'name'          => 'Right sidebar',
-		'id'            => 'right_sidebar',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
+		'name'			=> 'Right sidebar',
+		'id'			=> 'right_sidebar',
+		'before_widget'	=> '<div>',
+		'after_widget'	=> '</div>',
+		'before_title'	=> '<h2>',
+		'after_title'	=> '</h2>',
 	) );
 
 }
@@ -1140,10 +1140,6 @@ add_action( 'widgets_init', 'wcsd_widgets_init' );
 
 		<p><a href="http://codex.wordpress.org/Widgetizing_Themes">http://codex.wordpress.org/Widgetizing_Themes</a></p>
 		</section>   
-
-
-
-
 
 		<section>
 			<h2>Adding functionality</h2>
