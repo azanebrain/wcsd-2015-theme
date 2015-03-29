@@ -950,7 +950,7 @@ wp_reset_postdata();
 			<h4><code>functions.php</code> in a child theme</h4>
 			
 			<p>
-				<code>functions.php</code> works like <code>style.css</code> in a child theme. It adds to and modifies the parent's <code>functions.php</code>. You don't make a copy of it in your child theme folder like you do with template files, you start a new one.
+				<code>functions.php</code> works like <code>style.css</code> in a child theme. It ADDS to and modifies the parent's <code>functions.php</code>. You don't make a copy of it in your child theme folder like you do with template files, you start a new one.
 			</p>
 
 <pre><code data-trim class="php">
@@ -960,7 +960,7 @@ wp_reset_postdata();
 * My theme functions and definitions
 */
 
-(all your functions go here)
+(all your php functions and template tags go here)
 
 ?&gt;
 &nbsp;
@@ -990,21 +990,18 @@ require_once 'inc/my-file.php';
 			<h4>Keeping things organized</h4>
 			
 			<p>
-				It's important to keep theme files organized.
+				It's important to keep theme files organized. Find your system and stick with it.
 			
 			<ul>
-				<li><strong>awesome</strong> (theme folder)
+				<li><strong>awesome/</strong> (theme folder)
 					<ul>
-						<li><strong>css</strong> (any theme css you want to keep out of style.css)</li>
-						<li><strong>images</strong> (all the images used in your theme)</li>
-						<li><strong>inc</strong> (includes, I put functionality-related stuff in here)
-							<ul>
-								<li><strong>css</strong> (css used for functionality in the <code>inc</code> folder)</li>
-								<li><strong>images</strong> (images used for functionality in the <code>inc</code> folder)</li>
-								<li><strong>js</strong> (js used for functionality in the <code>inc</code> folder)</li>
-							</ul>
+						<li><strong>css/</strong> (any theme css you want to keep out of style.css)</li>
+						<li><strong>imgs/</strong> (all the images used in your theme)</li>
+						<li><strong>inc/</strong> (includes, I put functionality-related stuff in here)
 						</li>
-						<li><strong>js</strong> (theme javascript)</li>
+						<li><strong>fonts/</strong> (fonts, I put website onts in here)
+						</li>
+						<li><strong>js/</strong> (theme javascript)</li>
 					</ul>
 				</li>
 			</ul>
@@ -1016,7 +1013,7 @@ require_once 'inc/my-file.php';
 		<section>
 			<h2>Adding functionality</h2>
 				
-			<h4>Hooks, Action and Filters</h4>
+			<h4>Hooks: Actions and Filters</h4>
 			
 			<h4><a href="http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters" target="_blank">codex.wordpress.org says:</a></h4>
 
@@ -1031,7 +1028,7 @@ require_once 'inc/my-file.php';
 		<section>
 			<h2>Adding functionality</h2>
 				
-			<h4>Hooks, Action and Filters</h4>
+			<h4>Hooks: Actions and Filters</h4>
 
 			<p>
 				Hooks, Actions and Filters allow you to change core WordPress functionality without breaking it.
@@ -1041,7 +1038,7 @@ require_once 'inc/my-file.php';
 		<section>
 			<h2>Adding functionality</h2>
 				
-			<h4>Hooks, Action and Filters</h4>
+			<h4>Hooks: Actions and Filters</h4>
 
 			<p> 
 				<strong>Hooks</strong> - Points at which WordPress allows you to tap into a function and safely modify it.  
@@ -1051,37 +1048,45 @@ require_once 'inc/my-file.php';
 			</p>
 			
 			<ul>
-				<li>Changing the length of the excerpt</li>
-				<li>Adding Widgetized areas</li>
-				<li>Adding Menu areas</li>
+				<li>Changing the length of the excerpt (excerpt_length)</li>
+				<li>Adding Widgetized areas (widgets_init)</li>
+				<li>Adding Menu areas (after_setup_theme)</li>
 				<li>And hundreds of other things</li>
 			</ul>
-		</section>  
+
+
+		</section> 
 	
 		<section>
 			<h2>Adding functionality</h2>
 				
-			<h4>Hooks, Action and Filters</h4>
+			<h4>Hooks: Action and Filters</h4>
 
 			<p> 
 				<strong>Actions</strong> - A hook that makes something new happen when a WordPress function is triggered.
 			</p>
-		</section>  
+
+			<p><a href="http://codex.wordpress.org/Plugin_API/Action_Reference">http://codex.wordpress.org/Plugin_API/Action_Reference</a></p>
+
+		</section>
 
 		<section>
 			<h2>Adding functionality</h2>
 				
-			<h4>Hooks, Action and Filters</h4>
+			<h4>Hooks: Actions and Filters</h4>
 			
 			<p> 
 				<strong>Filters</strong> - A hook that modifies a WordPress function when it is triggered.
 			</p>
+
+			<p><a href="http://codex.wordpress.org/Plugin_API/Filter_Reference">http://codex.wordpress.org/Plugin_API/Filter_Reference</a></p>
+
 		</section>  
 
 		<section>
 			<h2>Adding functionality</h2>
 				
-			<h4>Hooks, Action and Filters</h4>
+			<h4>Hooks: Actions and Filters</h4>
 			
 			<h4><a href="http://wordpress.tv/2013/07/31/tracy-levesque-what-you-dont-know-you-can-do-wordpress-development-for-absolutely-everyone/" target="_blank">Visual Demo of Hooks, Actions and Filters</a></h4>
 			<p>
@@ -1089,6 +1094,59 @@ require_once 'inc/my-file.php';
 				19 minutes in.
 			</p>
 		</section>  
+
+		<section>
+			<h2>Adding Functionality</h2>
+
+			<h4>Hooks: Actions and Filters</h4>
+				
+			<p>Changing the length of the excerpt</p>
+
+<pre><code data-trim class="php">
+&nbsp;
+function custom_excerpt_length( $length ) {
+	return 50;  // where 50 is the maximum length of characters
+}
+// excerpt_length is the hook, function name, 999 is the priority
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+&nbsp;
+</code></pre>
+
+		<p><a href="https://codex.wordpress.org/Plugin_API/Filter_Reference/excerpt_length">https://codex.wordpress.org/Plugin_API/Filter_Reference/excerpt_length</a></p>
+		
+		</section> 
+
+		<section>
+			<h2>Adding Functionality</h2>
+
+			<h4>Hooks: Actions and Filters</h4>
+				
+			<p>Adding Widgetized areas</p>
+
+<pre><code data-trim class="php">
+&nbsp;
+function wcsd_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Right sidebar',
+		'id'            => 'right_sidebar',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	) );
+
+}
+add_action( 'widgets_init', 'wcsd_widgets_init' );
+&nbsp;
+</code></pre>
+
+		<p><a href="http://codex.wordpress.org/Widgetizing_Themes">http://codex.wordpress.org/Widgetizing_Themes</a></p>
+		</section>   
+
+
+
+
 
 		<section>
 			<h2>Adding functionality</h2>
@@ -1257,7 +1315,7 @@ add_action( 'wp_enqueue_scripts', 'add_bootstrap' );
 <pre><code data-trim class="php">
 &nbsp;
 register_nav_menus( array(
-'footer-nav' => 'Footer Menu',
+     'footer-nav' => 'Footer Menu',
 ) );
 &nbsp;
 </code></pre>
@@ -1323,15 +1381,15 @@ register_nav_menus( array(
 
 <pre><code data-trim class="php"> 
 &nbsp;
-register_sidebar(array(
-'name' => __( 'Header Widget Area' ),
-'id' => 'headerwidget',
-'description' => __( 'The header widget area.' ),
-'before_widget' => '&lt;div id="%1$s" class="headerwidget %2$s"&gt;',
-'after_widget' =&gt; '&lt;/div&gt;',
-'before_title' =&gt; '&lt;h4 class="headerwidgettitle"&gt;',
-'after_title' =&gt; '&lt;/h4&gt;',
-));
+register_sidebar( array(
+	'name'			=> __( 'Header Widget Area' ),
+	'id'			=> 'headerwidget',
+	'description'	=> __( 'The header widget area.' ),
+	'before_widget'	=> '&lt;div id="%1$s" class="headerwidget %2$s"&gt;',
+	'after_widget'	=&gt; '&lt;/div&gt;',
+	'before_title'	=&gt; '&lt;h4 class="headerwidgettitle"&gt;',
+	'after_title'	=&gt; '&lt;/h4&gt;',
+) );
 &nbsp;
 </code></pre>
 
