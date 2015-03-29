@@ -1224,7 +1224,7 @@ add_image_size( 'other-img', 200, 269, true ); // hard crop mode
 <pre><code data-trim class="php"> 
 &nbsp;
 function my_scripts() {
-wp_enqueue_script( 'jquery');
+	wp_enqueue_script( 'jquery');
 }
 
 add_action( 'wp_enqueue_scripts', 'my_scripts' );
@@ -1243,11 +1243,12 @@ add_action( 'wp_enqueue_scripts', 'my_scripts' );
 <pre><code data-trim class="php">
 &nbsp;
 function add_bootstrap() {
-wp_enqueue_script(
-'add-bootstrap-script',
-get_stylesheet_directory_uri() . '/inc/bootstrap/js/bootstrap.min.js',
-array( 'jquery' )
-);
+	wp_enqueue_script(
+		'add-bootstrap-script',
+		get_stylesheet_directory_uri() . 
+		'/inc/bootstrap/js/bootstrap.min.js',
+		array( 'jquery' )
+	);
 }
 
 add_action( 'wp_enqueue_scripts', 'add_bootstrap' );
@@ -1266,15 +1267,14 @@ add_action( 'wp_enqueue_scripts', 'add_bootstrap' );
 <pre><code data-trim class="php">
 &nbsp;
 function add_bootstrap() {
-wp_enqueue_script(
-'add-bootstrap-script',
-get_stylesheet_directory_uri() . '/inc/bootstrap/js/bootstrap.min.js',
-array( 'jquery' )
-);
-wp_enqueue_style( 
-'add-bootstrap-style', 
-get_template_directory_uri() . '/inc/bootstrap/css/bootstrap.min.css', 
-array(), 'all' );
+	wp_enqueue_script(
+		'add-bootstrap-script',
+		get_stylesheet_directory_uri() . 
+		'/inc/bootstrap/js/bootstrap.min.js', array( 'jquery' ) );
+	wp_enqueue_style( 
+		'add-bootstrap-style', 
+		get_template_directory_uri() . 
+		'/inc/bootstrap/css/bootstrap.min.css', array(), 'all' );
 }
 
 add_action( 'wp_enqueue_scripts', 'add_bootstrap' );
@@ -1415,15 +1415,15 @@ register_sidebar( array(
 
 <pre><code data-trim class="php">
 &nbsp;
-if(is_page( 'about' )){
-dynamic_sidebar( 'aboutsidebar' );
+if( is_page( 'about' ) ) {
+	dynamic_sidebar( 'aboutsidebar' );
 }
 
-if(is_page( 'contact' )){
-dynamic_sidebar( 'contactsidebar' );
+if( is_page( 'contact' ) ){
+	dynamic_sidebar( 'contactsidebar' );
 }
 &nbsp;
-</code></pre>
+</code></pre
 
 			<p>View <a href="https://github.com/TheTracyL/GDI-Code-Samples/blob/master/sidebar.php" target="_blank">the code to make this work for Twentythirteen</a></p>
 		</section>  
