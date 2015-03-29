@@ -1,5 +1,11 @@
 # Slides for the WordCamp San Diego 2015 Theme Development Workshop
 
+Authors:
+
+- [AJ Zane](https://twitter.com/azanebrain)
+- [Rich Sherman](https://twitter.com/richorrichard)
+- [Suzette Franck](https://twitter.com/suzette_franck)
+
 Run locally with
 
 ```
