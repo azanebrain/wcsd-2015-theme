@@ -1,0 +1,1500 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>#WCSD15 Theme Development Bootcamp</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<!-- <link rel="stylesheet" href="css/theme/league.css" id="theme"> -->
+		<!-- <link rel="stylesheet" href="css/theme/blood.css" id="theme"> -->
+		<link rel="stylesheet" href="css/theme/wcsd.css" id="theme"> 
+		<!-- <link rel="stylesheet" href="css/theme/serif.css" id="theme">   -->
+		<!-- good if lighter -->
+	<!-- <link rel="stylesheet" href="css/theme/solarized.css" id="theme"> -->
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background="img/fod.jpg">
+					<h2 style="color: white; text-shadow: 5px black;">WCSD Theme Develoment Bootcamp</h2>
+					<h4 style="color: white; text-shadow: 5px black;">(or, if you build it they will come.)</h4>
+				</section>
+
+				<section>
+					<h2>Your Speakers</h2>
+					<div class="clearfix threecolwrap">
+						<div class="threecol">
+							<img src="https://avatars1.githubusercontent.com/u/3579430?v=3&s=400" alt="">
+							<h4>Suzette Franck</h4>
+							<h4><a href="http://twitter.com/suzette_franck">@suzette_franck</a></h4>
+
+						</div>
+						<div class="threecol">
+							<img src="https://avatars2.githubusercontent.com/u/3231204?v=3&s=400" alt="">
+							<h4>AJ Zane</h4>
+							<h4><a href="https://twitter.com/azanebrain">@azanebrain</a></h4>
+						</div>
+						<div class="threecol">
+							<img src="https://avatars2.githubusercontent.com/u/4982035?v=3&s=400" alt="">
+							<h4>Richard Sherman</h4>
+							<h4><a href="https://twitter.com/richorrichard">@richorrichard</a></h4>
+						</div>
+					</div>
+					
+					
+				</section>
+
+				<section>
+					<h2>Before we begin...</h2>
+					<p>
+						<a href="http://azanebrain.github.io/wcsd-2015-theme/ ">azanebrain.github.io/wcsd-2015-theme/ </a>
+						<a href="http://azanebrain.github.io/wcsd-2015-theme/ama">azanebrain.github.io/wcsd-2015-theme/ama</a>
+						<a href="http://azanebrain.github.io/wcsd-2015-theme/slides">azanebrain.github.io/wcsd-2015-theme/slides</a>
+					</p>
+					
+				</section>
+
+				<section>
+					<h2>I. The Tools</h2>
+					<h4>Your best friends in the WordPress game</h4>
+					
+				</section>
+
+				<section>
+					<h2>File Management</h2>
+					<h4><a href="http://cpanel.com">cPanel (most common on servers)</a></h4>
+					<h4><a href="https://panic.com/transmit/">Transmit (Mac)</a></h4>
+					<h4><a href="https://filezilla-project.org/">FileZilla (PC &amp; Mac)</a></h4>          
+				</section>
+
+				<section>
+					<h2>Database Management</h2>
+					<h4><a href="http://www.phpmyadmin.net/home_page/index.php">phpMyAdmin (default on most hosts)</a></h4>
+					<h4><a href="http://sequelpro.com">Sequel Pro (Mac)</a></h4>
+					
+				</section>
+
+				<section>
+					<section>
+						<h2>Code Editor</h2>
+						<h4><a href="http://atom.io">Atom (Web-based. Very cool. by GitHub.)</a></h4>
+						<h4><a href="www.sublimetext.com/3">Sublime Text 3 (Mac &amp; PC)</a></h4>
+						<h4><a href="https://panic.com/coda/">Coda (makers of Transmit)</a></h4>
+					</section>
+					<section>
+						<h2>Sublime Text Packages for WordPress Development</h2>
+						<p><a href="https://packagecontrol.io/packages/WordPress">WordPress</a>: Autocompletion</p>
+						<p><a href="https://packagecontrol.io/packages/WordPress%20Developer%20Resources">WordPress Dev Resources</a>: Search selection</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Command Line (CLI)</h2>
+					<h4>Terminal (built in to Mac)</h4>
+					<h4><a href="http://iterm2.com">iTerm2 (a BETTER Mac terminal)</a></h4>
+					<h4><a href="http://git-scm.com/downloads">Git Bash (PC)</a></h4>
+					
+				</section>
+
+				<section>
+					<h2>Version Control</h2>
+					<h4>SVN (boo)</h4>
+					<h4>Git (yeah baby!)</h4>
+					<div class="fragment">
+						<h4><a href="http://github.com">Github</a></h4>
+						<h4><a href="http://bitbucket.com">Bitbucket</a></h4>
+					</div>
+					
+				</section>
+
+				<section>
+					<h2>CSS Preprocessors</h2>
+					<h4><a href="http://sass-lang.com/">Sass (and SCSS)</a></h4>
+					<h4><a href="http://lesscss.org">Less</a></h4>
+				</section>
+				
+				<section>
+
+					<h2>HTML/Markup Preprocessors</h2>
+					<h4><a href="http://jade-lang.org">Jade</a></h4>
+					<h4><a href="http://haml.info">Haml</a></h4>
+
+				</section>
+
+				<section>
+
+					<h2>Javascript Preprocessors</h2>
+					<h4><a href="http://coffeescript.org">CoffeeScript</a></h4>
+
+				</section>
+
+				<section>
+
+					<h2>Compiler Applications</h2>
+					<h4><a href="http://incident57.com/codekit">Codekit</a></h4>
+					<h4><a href="http://prepros.io">Prepros</a></h4>
+					<h4><a href="http://koala-app.com">Koala</a></h4>
+					
+				</section>
+
+				<section>
+					<h2>Resources</h2>
+					<h4><a href="http://codex.wordpress.org">WordPress Codex (the Bible)</a></h4>
+					<h4><a href="http://wordpress.stackexchange.com">Stackoverflow (ALL THE SMART!!)</a></h4>
+					<h4><a href="http://lmgtfy.com/">Google (duh, sucka)</a></h4>
+					
+				</section>
+
+				<section>
+					<section>
+						<h2>Setting up WordPress</h2>
+						[Yes, <a href="http://serverpress.com">ServerPress</a>! Help available at Happiness Bar also]
+					</section>
+					<section>
+						<h2>Using DesktopServer</h2>
+						Setup Tutorial: <a href="http://serverpress.com/news/getting-started-with-desktopserver/">serverpress.com/news/getting-started-with-desktopserver</a><br>
+						<br>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/Po0MkaL8Fgc?list=PLBD0AD98098A8F41B" frameborder="0" allowfullscreen></iframe>
+					</section>
+					<section>
+						<h2>Activate plugin: What The File</h2>
+						<a href="http://wcsd.dev/wp-admin/plugins.php">wcsd.dev/wp-admin/plugins.php</a><br>
+					</section>
+				</section>
+
+				<section>
+					<h2>II. Getting to know WordPress</h2>
+					<p><a href="http://wcsd.richorrichard.com/">wcsd.richorrichard.com</a></p>
+					
+					
+				</section>
+
+				<section>
+					<h2>10¢ Tour</h2>
+					
+					
+				</section>
+
+				<section>
+					<h2>WordPress File Structure</h2>
+					<img src="img/wp-tree.png" alt="" class="no-border">
+					
+				</section>
+
+				<section>
+					<h2>Core</h2>
+					<img src="img/wp-admin.png" alt="" class="no-border">
+					
+				</section>
+
+				<section>
+					<section>
+						<h2>Plugins</h2>
+						<img src="img/wp-plugins1.png" alt="" class="no-border">
+					</section>
+
+					<section>
+						<h2>Updates</h2>
+						<img src="img/wp-plugins2.png" alt="" class="no-border">
+					</section>
+					
+				</section>
+
+				<section>
+					<section>
+						<h2>Media</h2>
+						<img src="img/wp-media1.png" alt="" class="no-border">
+					</section>
+					
+					<section><h2>Media</h2><img src="img/wp-media2.png" alt="" class="no-border"></section>
+					<section><h2>Media</h2><img src="img/wp-media3.png" alt="" class="no-border"></section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Content Types</h2>
+						<p>The important thing to remember is that content can be broken into two types:</p>
+
+						<h4 class="fragment"><a href="#/21/1">Date/Time-based (Posts, Non-Heirarchical)</a></h4>
+						<h4 class="fragment"><a href="#/21/2">Sortable (Pages, Heirarchical)</a></h4>
+					</section>
+					
+					<section>
+						<h2>Post (non-hierarchcal)</h2>
+						<img src="img/wp-post.png" alt="" class="no-border">
+					</section>
+					<section>
+						<h2>Page (hierarchcal)</h2>
+						<img src="img/wp-page.png" alt="" class="no-border">
+					</section>
+				</section>
+
+				<section>
+					
+					<section>
+						<h2>Taxonomies</h2>
+						<p>Something similar applies to taxonomies. You need to remember that there are two types:</p>
+
+						<h4 class="fragment"><a href="#/21/1">Shotgun-style (Tags, Non-Heirarchical)</a></h4>
+						<h4 class="fragment"><a href="#/21/2">Sortable (Categories, Heirarchical)</a></h4>
+					</section>
+					
+					<section>
+						<h2>Tags (non-hierarchcal)</h2>
+						<img src="img/wp-tag.png" alt="" class="no-border">
+					</section>
+					<section>
+						<h2>Categories (hierarchcal)</h2>
+						<img src="img/wp-cat.png" alt="" class="no-border">
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>The Loop</h2>
+<pre><code data-trim class="html">
+&lt;?php if ( have_posts() ) : while ( have_post() ) : the_post(); ?>
+	
+	<!-- You can use template tags here -->
+	&lt;?php the_title(); ?>
+
+	<!-- The world is yours! -->
+	&lt;?php the_content(); ?>
+
+&lt;?php endwhile; endif; ?>
+</code></pre>
+					</section>
+
+					<section>
+						<h2>The Loop (other view)</h2>
+<pre><code data-trim class="html">
+&lt;?php if ( have_posts() ) { 
+	
+	while ( have_post() ) { 
+	
+		<!-- You can use template tags here -->
+		&lt;?php the_title(); ?>
+
+		<!-- The world is yours! -->
+		&lt;?php the_content(); ?>
+
+	&lt;?php } ?>
+
+&lt;?php } ?>
+</code></pre>
+						<p>(note: using bracket notation is most helpful when coding in raw php.)</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>The Loop 2.0</h2>
+						<p>Putting multiple loops on a page is easily accomplished with your handy-dandy <code>WP_Query()</code> function.</p>
+					</section>
+
+					<section>
+						<h4><code>WP_Query()</code> allows you to define the parameters of your nested loop</h4>
+<pre><code>$the_query = new WP_Query( array( /* query parameters */ ) );
+
+if ( $the_query->have_posts() ) : 
+	
+	while ( $the_query->have_posts() ) :
+		
+		$the_query->the_post();
+		
+		// The loop is running
+		the_title();
+
+	endwhile; 
+
+endif;
+
+// finally, reset the default loop data
+wp_reset_postdata();
+
+</code></pre>
+					</section>
+					
+				</section>
+
+				<section>
+					<h2>Diving into Theming</h2>
+					
+				</section>
+
+				<section>
+					<h2>wp-config.php</h2>
+					<p>This file is more important than you could know.</p>
+					<img src="img/wp-config.png" alt="" class="no-border">
+					
+				</section>
+
+				<section>
+					<h2>style.css</h2>
+					<p>And this is all you need to create a theme.</p>
+					<img src="img/wp-style.png" alt="" class="no-border">
+					
+				</section>
+
+				<section>
+					<h2>index.php</h2>
+					<p>This is the most basic theme file - the fallback for if no more specific file is found</p>
+					<img src="img/wp-index.png" alt="" class="no-border">
+					
+				</section>
+
+				<section>
+					<h2>header.php &amp; footer.php</h2>
+					<p>These two files provide the wrapper for your theme, and get <code>wp_head()</code> &amp; <code>wp_foot()</code> running</p>
+					<img src="img/wp-header.png" alt="" class="no-border">
+				</section>
+
+				<section>
+					<h2>Template Hierarchy</h2>
+					<p>This is complicated. But not really.. But it is.</p>
+					<a href="https://codex.wordpress.org/images/9/96/wp-template-hierarchy.jpg" target="_blank"><img src="img/wp-template-hierarchy.jpg" alt="" class="no-border"></a>
+					
+				</section>
+
+				<section>
+					<section>
+						<h2>page.php &amp; single.php</h2>
+						<p>This is the most basic level of differentiation between content type templates.</p>
+					</section>
+					<section>
+						<h2>page.php</h2>
+						<p>This is the basic template for pages (le duh.)</p>
+						<img src="img/wp-page-php.png" alt="" class="no-border">
+					</section>
+
+					<section>
+						<h2>single.php</h2>
+						<p>This is the basic template for posts.</p>
+						<img src="img/wp-single.png" alt="" class="no-border">
+					</section>
+					
+				</section>
+
+				<section>
+					<h2>front-page.php</h2>
+					<p>This displays the front page of the site (but only if the file is present). This can also be accomplished in other ways, but it's good to know about.</p>
+					
+				</section>        
+
+				<section>
+					<h2>archive.php</h2>
+					<p>The archive.php acts as the default fallback for collections of posts based on sorting, author, category etc.</p>
+					<img src="img/wp-archive.png" alt="" class="no-border">
+					
+				</section>
+
+				<section>
+					<h2>sidebar.php</h2>
+					<p>the sidebars of a WordPress site can be included in few ways, but sidebar.php is the standard method. More about this later...</p>
+					<img src="img/wp-sidebar.png" alt="" class="no-border">
+					
+				</section>
+
+				<section>
+					<h2>functions.php</h2>
+					<p>functions.php allows you to modify what happens to your theme/child theme. One file to rule them all...</p>
+					<img src="img/wp-functions.png" alt="" class="no-border">
+					
+				</section>
+
+<!-- SECTION III SLIDE (38) 2:10PM-->
+
+				<section>
+					<h2>III: Integrating your HTML &amp; WP Tags</h2>
+					<p><a href="http://wcsd.richorrichard.com/">wcsd.richorrichard.com</a></p>
+					<aside class="notes">
+						How much have you learned?
+						<br>ARE YOU EXCITED!!?
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Before we dive into development</h2>
+						<p>The demo theme</p>
+						<p><a href="https://github.com/azanebrain/wcsd-2015-theme/blob/master/README.md">README.md</a></p>
+						<aside class="notes">
+							- The demo theme is a broken WP theme based on the same Bootstrap template used on the micro site for this workshop. 
+							<br>- During this part of the workshop, I'm going to give you tasks that will help you transform the broken HTML template into a fully functioning WP theme
+							<br>- Make sure you have that README file open, I'll explain it in more detail in a bit
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Index.PHP Teardown</h2>
+						<p><a href="http://wcsd.dev" target="_blank">Our non-CMS webpage</a></p>
+						<aside class="notes">
+							<br>- Now that the theme is activated, we can see that we have a working webpage, but none of the benefits of our CMS
+						</aside>
+					</section>
+					<section>
+						<h2>get_header() and get_footer()</h2>
+						<p class="fragment">Like include()<br>but different</p>
+						<aside class="notes">
+							The first steps we take to make a theme is to split up our HTML into 3 parts, like a hamburger.
+							<br>-WP has a suite of useful functions to help you do complex PHP tasks
+							<br>* These two are like include
+							<br>- But different because they include specific files in an extendable way
+						</aside>
+					</section>   
+					<section>
+						<h2>How to use the README</h2>
+						<h3><a href="http://codex.wordpress.org">codex.wordpress.org</a></h3>
+						<p>The README is the key to the codex</p>
+						<aside class="notes">
+							The README markdown file has links to all of the resources you'll need to complete the tasks that will help you develop the theme
+							<br>- Also code snippets
+						</aside>
+					</section>       
+					<section data-background="img/task-bg.jpg" class="task">
+						<h2>Task:</h2>
+						<p>Replace <strong>index-sample.php</strong> with <strong>index.php</strong></p>
+						<aside class="notes">
+							Our first task: Make a working WP theme
+						</aside>
+					</section>       
+				</section>
+
+				<section>
+					<section>
+						<h2>Header.PHP</h2>
+						<aside class="notes">
+							Now that we have a fully broken website, let's get into WordPress theming
+						</aside>
+					</section>   
+					<section>
+						<h2>wp_head()</h2>
+						<p>Meta for your theme</p>
+						<p class="fragment">Dev tools in your browser: 
+							<br>
+							Right click -&gt; Inspect Element</p>
+						<aside class="notes">
+							wp_head() helps display the meta content for your theme. Right now we're just going to look at its basic functionality
+							<br>* Dev tools in your browser
+							<br>- Open up the resources panel and the page to see the meta
+							<br>- Comment out wp_head() and reload: we'll see a bunch of meta code disappears
+							<br>- This function is used by other WP functions in your theme or plugins to output data right in here. Suzette will go into the details in the next section
+						</aside>
+					</section>          
+				</section>
+
+				<section>
+					<section>
+						<h2>get_template_directory()</h2>
+						<p>Outputs the path to the theme</p>
+						<div class="fragment">
+							Wrong: 
+<pre><code data-trim class="html">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<!-- Looking for: wcsd.dev/css/bootstrap.min.css -->
+</code></pre>
+							<br>
+							Right:
+<pre><code data-trim class="html">
+<link href="/wp-content/themes/wcsd-2015-theme/css/bootstrap.min.css" rel="stylesheet">
+</code></pre>
+						</div>
+						<p class="fragment">This is <strong>not</strong> the <em>WP Way</em></p>
+						<aside class="notes">
+							Your theme can be anywhere in your file system and named anything
+							<br>- This function outputs a direct path to it
+							<br>* If we look at all of the broken links in our console, we'll see it's trying to access them at the root of the site. But they're in /wp-content/themes/wcsd-2015-theme
+							<br>* You'll learn this proper way to add your assets in the next section, but this will work for now
+						</aside>
+					</section>   
+					<section data-background="img/task-bg.jpg" class="task">
+						<h2>Task:</h2>
+						<p>Use get_template_directory() to fix the broken links to scripts and styles</p>
+						<aside class="notes">
+							Tip: Don't forget your PHP tags
+						</aside>
+					</section>        
+				</section>
+
+				<section>
+					<section>
+						<h2>Navigation</h2>
+					</section>  
+					<section>
+						<h2>Defining &amp; Using</h2>
+						<p>Defined in functions.PHP</p>
+
+<pre><code data-trim class="php">
+function wcsd_setup() { 
+	register_nav_menus( array(
+		'primary'   => __( 'Top primary menu', 'wcsd' ),
+	) );
+}
+add_action( 'after_setup_theme', 'wcsd_setup' );
+</code></pre>
+
+						<p>Used in header.PHP</p>
+<pre><code data-trim class="php">
+$args = array(
+		'theme_location' => 'primary',
+		'menu_class'     => 'nav navbar-nav',
+);
+wp_nav_menu( $args );
+</code></pre>
+
+					<aside class="notes">
+						Creating menus involves two steps: registering and outputting
+						<br>- Don't necessarily need to put it in the header. That's just our example
+					</aside>
+
+					</section>   
+					<section data-background="img/task-bg.jpg" class="task">
+						<h2>Task:</h2>
+						<p>Activate the menu by removing the hard-coded links in header.PHP, and uncommenting the WP function</p>
+						<p><em>You may have to set the 'Primary' menu in the Primary location</em></p>
+					</section>        
+				</section>
+
+				<section>
+					<section>
+						<h2>Footer.PHP</h2>
+						<p>Very similar to header.PHP</p>
+						<aside class="notes">
+							The footer acts like the yang to header.PHP's yin
+							<br>- It similarly wraps the HTML of the page, and provides a space to add meta information about the site
+						</aside>
+					</section>  
+					<section data-background="img/task-bg.jpg" class="task">
+						<h2>Task:</h2>
+						<p>Add the Admin Bar through wp_footer()</p>
+						<aside class="notes">
+							Tip: You don't need to do anything more than uncomment
+							<br>- Basically, this is adding the CSS and JavaScript needed to get that extra functionality
+						</aside>
+					</section>        
+				</section>
+
+				<section>
+					<section>
+						<h2>Main Content</h2>
+						<p><a href="http://wcsd.dev/?page_id=733">Page A</a></p>
+						<div class="fragment">
+							<p>Foolish page! Use the right template</p>
+							<img src="img/foolishpage.jpg" alt="">
+						</div>
+						<aside class="notes">
+							We'll be using Page A to dive into how the page template works
+							<br>* Open the link and see how it still loads the index template
+							<br>- We are missing a page template file
+						</aside>
+					</section>  
+					<section data-background="img/task-bg.jpg" class="task">
+						<h2>Task:</h2>
+						<p>Rename page-sample.PHP to page.PHP</p>
+						<aside class="notes">
+							Now, once we reload the page, we will see that the page template is being used instead of index
+							<br>- What The File will also show us the template
+						</aside>
+					</section>   
+				</section>
+				<section>
+					<section>
+						<h2>The Loop</h2>
+						<p>The key concept of displaying posts <br>and pages in WordPress</p>
+<pre><code data-trim class="php">
+&lt;?php
+if ( have_posts() ) {
+	while ( have_posts() ) {
+		the_post();
+		// the_content();
+		// the_excerpt();
+		// the_title();
+		// the_permalink();
+		// ...
+	}
+}
+?>
+</code></pre>
+						<aside class="notes">
+							Here is the loop again
+							<br>- The Loop takes care of what posts to actually get, and works differently on each template
+							<br>- Now let's looks into the anatomy of it
+						</aside>
+					</section>  
+					<section>
+						<h2>have_posts()</h2>
+						<p>If: If there are posts</p>
+						<p>While: Loop through each post</p>
+<pre><code data-trim class="php">
+if ( have_posts() )  {
+	while ( have_posts() ) { ... }
+}
+</code></pre>
+						<aside class="notes">
+							This function lets us loop through every post that is returned
+							<br>- On our page template, that's just the current page
+							<br>- Later we'll see how this can return many posts
+						</aside>
+					</section> 
+					<section>
+						<h2>the_post()</h2>
+						<p>Sets up the current post object</p>
+						<p>It is the first declaration in The Loop</p>
+<pre><code data-trim class="php">
+while ( have_posts() ) {
+	the_post();
+	...
+</code></pre>
+						<aside class="notes">
+							This function will let us use aspects of the post like its title, permalink, featured image, etc
+							<br>- Without it WordPress will think we're dealing with different content
+							<br>- Make sure it's the first thing you define because you don't want to forget it
+						</aside>
+					</section>   
+					<section>
+						<h2>Featured Images &amp; Thumbnails</h2>
+						<p>Define in functions.PHP</p>
+<pre><code data-trim class="php">
+add_theme_support( 'post-thumbnails' ); 
+</code></pre>
+						<p>Check if the post has an image</p>
+<pre><code data-trim class="php">
+if ( has_post_thumbnail() ) { ... }
+</code></pre>
+						<p>Use anywere</p>
+<pre><code data-trim class="php">
+if ( has_post_thumbnail() ) { 
+	the_post_thumbnail();
+}
+</code></pre>
+						<aside class="notes">
+							Kind of similar to menus, BUT:
+							<br>- Define that our theme supports this feature
+							<br>- Within our template, check to see if the post even has one
+							<br>- Then output it
+						</aside>
+					</section>    
+					<section data-background="img/task-bg.jpg" class="task">
+						<h2>Task:</h2>
+						<p>Add and display a <strong>medium sized</strong> <br>featured image on <a href="http://wcsd.dev/wp-admin/post.php?post=733&action=edit" target="_blank">Page A</a></p>
+						<p>Extra: If the post has a featured image, display two columns in the content area instead of one</p>
+						<aside class="notes">
+							Tip: This is the first task where you might have to check the codex
+						</aside>
+					</section>        
+				</section>
+
+				<section>
+					<section>
+						<h2>Single Template</h2>
+						<p>Just like the Page template but used for individual posts</p>
+						<p>single.PHP</p>
+						<aside class="notes">
+							The Single template is almost the exact same as the Page template
+							<br>- The difference is that Single is used for posts, while Page is used for pages
+						</aside>
+					</section>    
+				</section>
+
+				<section>
+					<section>
+						<h2>Sidebars</h2>
+						<p>Not actually on the side</p>
+						<aside class="notes">
+							Sidebars let us utilize widget areas
+							<br>- They're not actually on the side
+						</aside>
+					</section> 
+					<section>
+						<h2>Sidebar usage</h2>
+						<p>Register in functions.PHP</p>
+<pre><code data-trim class="php">
+register_sidebar( array( ... ) );
+</code></pre>
+						<p>sidebar.PHP</p>
+<pre><code data-trim class="php">
+if ( is_active_sidebar( 'sidebar-name' ) ) {
+	dynamic_sidebar( 'sidebar-name' );
+}
+</code></pre>
+						<p>Use anywhere</p>
+<pre><code data-trim class="php">
+get_sidebar()
+</code></pre>
+						<aside class="notes">
+							Slightly similar to our menu we register it, create a file, then use
+						</aside>
+					</section>    
+					<section data-background="img/task-bg.jpg" class="task">
+						<h2>Task:</h2>
+						<p>Uncomment the sidebar in footer.PHP</p>
+						<p>Display the WCSD sidebar instead of the generic one</p>
+					</section>   
+				</section>
+
+				<section>
+					<section>
+						<h2>Archive Template</h2>
+						<p><a href="http://wcsd.dev/?cat=38" target="_blank">'Post Formats' Archive Page</a></p>
+						<p>Same loop, different functionality</p>
+						<p>archive.PHP</p>
+						<aside class="notes">
+							View the page
+							<br>- View the code
+							<br>- Notice how on the Archive template, The Loop doesn't go through one post. It displays every post that meets the criteria of the query ('Post Formats' cat)
+							<br>- This becomes very important later when we get into wp_query
+						</aside>
+					</section>    
+				</section>
+
+				<section>
+					<section>
+						<h2>Pagination</h2>
+						<p>Acts as a Loop limiter</p>
+						<p class="fragment">posts_nav_link() <br>vs<br>previous_posts_link() &amp; next_posts_link</p>
+						<aside class="notes">
+							You can think of pagination as something that limits the returnset of The Loop
+							<br>- Gives us the ability to separate the content into smaller chunks and help load time
+							<br>- By default, WordPress sets this to 10 (in Settings &gt; Reading)
+							<br>* Display both, or display one
+						</aside>
+					</section> 
+					<section data-background="img/task-bg.jpg" class="task">
+						<h2>Task:</h2>
+						<p>Add the pagination link to the footer of the archive template</p>
+						<p>Extra: Check for previous and next pages and add the specific links</p>
+					</section>    
+				</section>
+
+				<section>
+					<section>
+						<h2>Front Page</h2>
+						<p>A specific template for the front page</p>
+						<p>Set through Settings -&gt; Reading</p>
+						<p>Page: <a href="http://wcsd.dev/?page_id=701">Front Page</a></p>
+						<p>front-page.PHP</p>
+						<aside class="notes">
+							It's really basic.
+							<br>- What I want to cover is (next slide)
+						</aside>
+					</section>   
+				</section>
+				
+				<section>
+					<section>
+						<h2>WP_Query()</h2>
+						<p>The key concept of displaying specific content in WordPress</p>
+						<p class="fragment">WP_Query() is The Loop you can put anywhere and tweak</p>
+						<aside class="notes">
+							TODO: depending on what is covered before, this content will change
+							<br>* WP Query is The Loop you can put anywhere and tweak it to your needs
+							<br>- Use anywhere you want
+						</aside>
+					</section>
+					<section>
+						<p>Anatomy of WP_Query()</p>
+<pre><code data-trim class="php">
+$the_query = new WP_Query( array( /* query parameters */ ) );
+// The Loop
+if ( $the_query->have_posts() ) {
+	echo '<ul>';
+	while ( $the_query->have_posts() ) {
+		$the_query->the_post();
+		echo '<li>' . get_the_title() . '</li>';
+	}
+	echo '</ul>';
+} else {
+// no posts found
+}
+// Restore original Post Data
+wp_reset_postdata();
+</code></pre>
+						<img src="img/spiderman.jpg" alt="SpiderMan: With great power comes great responsibility">
+						<aside class="notes">
+							This is a straight forward WP_Query.
+							<br>- It's small, but like Spiderman, has great responsibility
+						</aside>
+					</section>    
+					<section>
+						<h2>The query object</h2>
+						<p>The result of the query is set to an object variable ($the_query)</p>
+<pre><code data-trim class="php">
+$the_query = new WP_Query( array( /* query parameters */ ) );
+</code></pre>
+<pre class="fragment"><code data-trim class="php">
+while ( $the_query->have_posts() ) { ... }
+</code></pre>
+<pre class="fragment"><code data-trim class="php">
+$the_query->the_post();
+the_title();
+</code></pre>
+						<aside class="notes">
+							Basically, the WP_Query function is an easy way to write complex database queries
+							<br>- It takes a ton of parameters to figure out what posts you want to work with and sets those to a PHP obj
+							<br>* There are a lot of useful functions within the object like have_posts which lets you loop through the results of the query
+							<br>* and the_post(), which, you'll remember, sets up the current post
+						</aside>
+					</section> 
+					<section>
+						<h2>Resetting the Post Data</h2>
+						<p>This function must be run after the query loop</p>
+<pre><code data-trim class="php">
+$the_query = new WP_Query( $args );
+if ( $the_query->have_posts() ) {
+	while ( $the_query->have_posts() ) { ... }
+}
+wp_reset_postdata(); /* UBER IMPORTANT !!! */
+</code></pre>
+						<aside class="notes">
+							This is really important
+							<br>- If not run, WordPress will assume that we are still using data from the last post returned by the query
+						</aside>
+					</section> 
+					<section>
+						<h2>Sample: front-page.PHP</h2>
+						<p>This query shows the 3 most recent posts</p>
+<pre><code data-trim class="php">
+$the_query = new WP_Query( array (
+	'post_status'         => 'publish',
+	'posts_per_page'      => '3',
+	'order'               => 'DESC',
+	'orderby'             => 'date',
+	'ignore_sticky_posts' => 1,
+));
+if ( $the_query->have_posts() ) { ?>
+	<div> {{ section intro }} </div>
+	&lt;?php while ( $the_query->have_posts() ) {
+		$the_query->the_post();
+		the_post_thumbnail();
+		echo '<h3>' . get_the_title() . '</h3>';
+		// ...
+	}
+} else { /* No results */ }
+wp_reset_postdata();
+</code></pre>
+						<aside class="notes">
+							It's a little condensed. Open it up on your computer for the expanded view
+							<br>- This is your homework. Learn it and you will be a WP master
+						</aside>
+					</section>
+					<section>
+						<h2>WP Query Generator</h2>
+						<p><a href="http://generatewp.com/wp_query/">GenerateWP.com/wp_query</a></p>
+						<p class="fragment">Don't rely on it. Use it to help launch yourself forward.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Enqueueing</h2>
+						<p>The process of correctly adding scripts and style assets</p>
+						<aside class="notes">
+							Finally, I'm going to end this section by introducing the proper way to include your script and style assets: the impossible to spell enqueue
+						</aside>
+					</section>    
+				</section>
+
+<!-- SECTION IV SLIDE (52) 2:50pm -->
+
+		<section>
+						<h2>IV. Functions.php &amp; Registering and Enqueueing Scripts and Styles</h2>
+						<p><a href="http://wcsd.richorrichard.com/">wcsd.richorrichard.com</a></p>
+				</section>  
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4><code>functions.php</code></h4>
+			
+			<p>
+				functions.php is a special file that acts like a plugin to add functionality to your theme. If you're using a child theme you can use it modify and add functionality to the parent theme.
+			</p>
+			
+			<p><br />Check out the WordPress Codex <a href="http://codex.wordpress.org/Functions_File_Explained" target="_blank">Functions File Explained</a></p>
+		</section>  
+		
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4><code>functions.php</code> in a child theme</h4>
+			
+			<p>
+				<code>functions.php</code> works like <code>style.css</code> in a child theme. It ADDS to and modifies the parent's <code>functions.php</code>. You don't make a copy of it in your child theme folder like you do with template files, you start a new one.
+			</p>
+
+<pre><code data-trim class="php">
+&nbsp;
+&lt;?php
+/**
+* My theme functions and definitions
+*/
+
+(all your php functions and template tags go here)
+
+?&gt;
+&nbsp;
+</code></pre>
+		</section>  
+		
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4><code>functions.php</code></h4>
+			
+			<p>
+				You can tell your theme to load external files in <code>functions.php</code>. It helps you keep <code>functions.php</code> from being overloaded with too much code.
+			</p>
+			
+<pre><code data-trim class="php">
+&nbsp;
+// Load a file from the inc folder
+require_once 'inc/my-file.php';
+&nbsp;
+</code></pre>
+		</section>  
+		
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>Keeping things organized</h4>
+			
+			<p>
+				It's important to keep theme files organized. Find your system and stick with it.
+			
+			<ul>
+				<li><strong>awesome/</strong> (theme folder)
+					<ul>
+						<li><strong>css/</strong> (any theme css you want to keep out of style.css)</li>
+						<li><strong>imgs/</strong> (all the images used in your theme)</li>
+						<li><strong>inc/</strong> (includes, I put functionality-related stuff in here)
+						</li>
+						<li><strong>fonts/</strong> (fonts, I put website onts in here)
+						</li>
+						<li><strong>js/</strong> (theme javascript)</li>
+					</ul>
+				</li>
+			</ul>
+			
+			</p>
+
+		</section>  
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>Hooks: Actions and Filters</h4>
+			
+			<h4><a href="http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters" target="_blank">codex.wordpress.org says:</a></h4>
+
+				Hooks are provided by WordPress to allow your plugin to 'hook into' the rest of WordPress...There are 2 kinds of hooks: 
+				<ul>
+					<li><em>Actions</em>: A custom PHP function defined in your plugin (or theme) and hooked, i.e. set to respond, to specific events that take place in WordPress. </li>
+					<li><em>Filters</em>: Functions that WordPress passes data through, at certain points in execution, just before taking some action with the data </li>
+				</ul>           
+
+		</section>  
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>Hooks: Actions and Filters</h4>
+
+			<p>
+				Hooks, Actions and Filters allow you to change core WordPress functionality without breaking it.
+			</p>
+		</section>  
+	
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>Hooks: Actions and Filters</h4>
+
+			<p> 
+				<strong>Hooks</strong> - Points at which WordPress allows you to tap into a function and safely modify it.  
+			</p>
+			<p>
+				Some examples are:
+			</p>
+			
+			<ul>
+				<li>Changing the length of the excerpt (excerpt_length)</li>
+				<li>Adding Widgetized areas (widgets_init)</li>
+				<li>Adding Menu areas (after_setup_theme)</li>
+				<li>And hundreds of other things</li>
+			</ul>
+
+
+		</section> 
+	
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>Hooks: Action and Filters</h4>
+
+			<p> 
+				<strong>Actions</strong> - A hook that makes something new happen when a WordPress function is triggered.
+			</p>
+
+			<p><a href="http://codex.wordpress.org/Plugin_API/Action_Reference">http://codex.wordpress.org/Plugin_API/Action_Reference</a></p>
+
+		</section>
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>Hooks: Actions and Filters</h4>
+			
+			<p> 
+				<strong>Filters</strong> - A hook that modifies a WordPress function when it is triggered.
+			</p>
+
+			<p><a href="http://codex.wordpress.org/Plugin_API/Filter_Reference">http://codex.wordpress.org/Plugin_API/Filter_Reference</a></p>
+
+		</section>  
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>Hooks: Actions and Filters</h4>
+			
+			<h4><a href="http://wordpress.tv/2013/07/31/tracy-levesque-what-you-dont-know-you-can-do-wordpress-development-for-absolutely-everyone/" target="_blank">Visual Demo of Hooks, Actions and Filters</a></h4>
+			<p>
+				From Tracy Levesque's talk at WordCamp San Francisco.<br />
+				19 minutes in.
+			</p>
+		</section>  
+
+		<section>
+			<h2>Adding Functionality</h2>
+
+			<h4>Hooks: Actions and Filters</h4>
+				
+			<p>Changing the length of the excerpt</p>
+
+<pre><code data-trim class="php">
+&nbsp;
+function custom_excerpt_length( $length ) {
+	return 50;  // where 50 is the maximum length of characters
+}
+// excerpt_length is the hook, function name, 999 is the priority
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+&nbsp;
+</code></pre>
+
+		<p><a href="https://codex.wordpress.org/Plugin_API/Filter_Reference/excerpt_length">https://codex.wordpress.org/Plugin_API/Filter_Reference/excerpt_length</a></p>
+		
+		</section> 
+
+		<section>
+			<h2>Adding Functionality</h2>
+
+			<h4>Hooks: Actions and Filters</h4>
+				
+			<p>Adding Widgetized areas</p>
+
+<pre><code data-trim class="php">
+&nbsp;
+function wcsd_widgets_init() {
+
+	register_sidebar( array(
+		'name'			=> 'Right sidebar',
+		'id'			=> 'right_sidebar',
+		'before_widget'	=> '<div>',
+		'after_widget'	=> '</div>',
+		'before_title'	=> '<h2>',
+		'after_title'	=> '</h2>',
+	) );
+
+}
+add_action( 'widgets_init', 'wcsd_widgets_init' );
+&nbsp;
+</code></pre>
+
+		<p><a href="http://codex.wordpress.org/Widgetizing_Themes">http://codex.wordpress.org/Widgetizing_Themes</a></p>
+		</section>   
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>Handy WordPress Functions</h4>
+			
+			<p>
+				The following is an overview of some handy WordPress functions you can hook into to enrich your themes.
+			</p>
+
+			<p><br />Check out the WordPress Codex <a href="http://codex.wordpress.org/Function_Reference/" target="_blank">Entire Function Reference</a></p>
+		</section>    
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>add_image_size</h4>
+			
+			<p>
+				You can add custom images sizes (in addition to the default thumb, medium, large and original).
+			</p>
+
+<pre><code data-trim class="php">
+&nbsp;      
+add_image_size( 'my-img', 400, 400 ); // soft proportional crop mode
+add_image_size( 'other-img', 200, 269, true ); // hard crop mode
+&nbsp;
+</code></pre>
+
+			<p><br />Check out the WordPress Codex <a href="http://codex.wordpress.org/Function_Reference/add_image_size" target="_blank">add image size</a></p>
+		</section>    
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>get_the_post_thumbnail</h4>
+			
+			<p>
+				In your template you can use a tag to load your custom version of featured images.
+			</p>
+<pre><code data-trim class="php">
+&nbsp;      
+&lt;?php echo get_the_post_thumbnail($page->ID, 'my-img'); ?&gt;
+&nbsp;
+</code></pre>
+		</section>    
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>get_the_post_thumbnail</h4>
+			
+			<p>
+				<strong>Tip!</strong> Adding custom thumbnail sizes to functions.php will not affect images previously uploaded, only images uploaded from that point on. You will need to regenerate older images.
+			</p>
+			
+			<p>
+				You can use the handy <a href="http://wordpress.org/plugins/regenerate-thumbnails/" target="_blank"><strong>Regenerate Thumbnails</strong></a> plugin to create the custom sizes of your previously uploaded images.
+			</p>
+		</section>  
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>wp_enqueue_style / wp_enqueue_script</h4>
+			
+			<p>
+				You may want to add css and js files to your theme, for instance jQuery, or a framework like Bootstrap. A common beginner mistake is to hard code these into <code>header.php</code>. The correct way to add files to <code>&lt;head&gt;</code> is to enqueue it in your <code>functions.php</code> file.
+			</p>
+			
+			<p><br />Check out the WordPress Codex <a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_style" target="_blank">wp enqueue style</a> and
+			<a href="http://codex.wordpress.org/Function_Reference/wp_enqueue_script" target="_blank">wp enqueue script</a></p>
+		</section>
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>wp_enqueue_style / wp_enqueue_script</h4>
+			
+			<p>Load WordPress' core copy of jQuery. If you're using jQuery with your theme you should always use WP's copy vs. an external version. </p>
+
+<pre><code data-trim class="php"> 
+&nbsp;
+function my_scripts() {
+	wp_enqueue_script( 'jquery');
+}
+
+add_action( 'wp_enqueue_scripts', 'my_scripts' );
+&nbsp;
+</code></pre>
+
+		</section>
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>wp_enqueue_style / wp_enqueue_script</h4>
+			
+			<p>Load a script that depends on jQuery. Bootstrap is a framework that needs jQuery to run. The code below will load both jQuery and Bootstrap JS.</p>
+
+<pre><code data-trim class="php">
+&nbsp;
+function add_bootstrap() {
+	wp_enqueue_script(
+		'add-bootstrap-script',
+		get_stylesheet_directory_uri() . 
+		'/inc/bootstrap/js/bootstrap.min.js',
+		array( 'jquery' )
+	);
+}
+
+add_action( 'wp_enqueue_scripts', 'add_bootstrap' );
+&nbsp;
+</code></pre>
+
+		</section>
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>wp_enqueue_style / wp_enqueue_script</h4>
+			
+			<p>Load a stylesheet and a script.</p>
+
+<pre><code data-trim class="php">
+&nbsp;
+function add_bootstrap() {
+	wp_enqueue_script(
+		'add-bootstrap-script',
+		get_stylesheet_directory_uri() . 
+		'/inc/bootstrap/js/bootstrap.min.js', array( 'jquery' ) );
+	wp_enqueue_style( 
+		'add-bootstrap-style', 
+		get_template_directory_uri() . 
+		'/inc/bootstrap/css/bootstrap.min.css', array(), 'all' );
+}
+
+add_action( 'wp_enqueue_scripts', 'add_bootstrap' );
+&nbsp;
+</code></pre>
+
+		</section>
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>register_nav_menus</h4>
+			
+			<p> 
+				<img src="img/section-iv/menus.png" style="float: right; margin-left: 20px;" />
+				If you have used custom menus in WordPress sites before (Appearance > Menus in the admin) you know a theme can have specific menu locations.
+			</p>
+			
+			<p><br />Check out the WordPress Codex <a href="http://codex.wordpress.org/Function_Reference/register_nav_menus" target="_blank">register nav menus</a></p>
+		</section>  
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>register_nav_menus</h4>
+			
+			<p> 
+				Use <code>register_nav_menus</code> to register your menus.
+			</p>
+
+<pre><code data-trim class="php">
+&nbsp;
+register_nav_menus( array(
+     'footer-nav' => 'Footer Menu',
+) );
+&nbsp;
+</code></pre>
+
+		</section>    
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>wp_nav_menu</h4>
+			
+			<p> 
+				Use the <code>wp_nav_menu</code> tag to assign a menu to a location in your theme.
+			</p> 
+
+<pre><code data-trim class="php">
+&nbsp;
+&lt;?php wp_nav_menu( array( 'theme_location' => 'footer-nav' ) ); ?&gt;
+&nbsp;
+</code></pre>
+
+			<p><br />Check out the WordPress Codex <a href="http://codex.wordpress.org/Function_Reference/wp_nav_menu" target="_blank">wp nav menu</a></p>
+		</section>    
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>wp_nav_menu</h4>
+			
+			<p> 
+				You can also use <code>wp_nav_menu</code> to load any custom menu you've created in Appearance > Menus. You can use the menu's ID, slug, or name.
+			</p> 
+
+<pre><code data-trim class="php">
+&nbsp;
+&lt;?php wp_nav_menu( array('menu' => '2' )); ?&gt;
+&nbsp;
+</code></pre>
+
+		</section>  
+		
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>register_sidebar</h4>
+			
+			<p>
+				<img src="img/section-iv/widgets.png" style="float: right; margin-left: 20px;" />
+				Most themes come with specific widgetized areas -- locations in the sidebar, footer, header, etc. that you can drag and drop widgets into. You can use <code>register_sidebar</code> to create widgetized areas in your theme.
+			</p>
+			
+			<p><br />Check out the WordPress Codex <a href="http://codex.wordpress.org/Function_Reference/register_sidebar" target="_blank">register sidebar</a></p>
+		</section>    
+		
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>register_sidebar</h4>
+			
+			<p> 
+				Use <code>register_sidebar</code> to register your widgetized areas.
+			</p> 
+
+<pre><code data-trim class="php"> 
+&nbsp;
+register_sidebar( array(
+	'name'			=> __( 'Header Widget Area' ),
+	'id'			=> 'headerwidget',
+	'description'	=> __( 'The header widget area.' ),
+	'before_widget'	=> '&lt;div id="%1$s" class="headerwidget %2$s"&gt;',
+	'after_widget'	=&gt; '&lt;/div&gt;',
+	'before_title'	=&gt; '&lt;h4 class="headerwidgettitle"&gt;',
+	'after_title'	=&gt; '&lt;/h4&gt;',
+) );
+&nbsp;
+</code></pre>
+
+		</section>    
+
+		<section>
+			<h2>Adding functionality</h2>
+			<h4>dynamic_sidebar</h4>
+			<p> 
+				Use the <code>dynamic_sidebar</code> tag to assign a widgetized area to a location in your theme.
+			</p> 
+
+<pre><code data-trim class="php">
+&nbsp;
+&lt;?php dynamic_sidebar( 'headerwidget' ); ?&gt;
+&nbsp;
+</code></pre>
+
+			<p><br />Check out the WordPress Codex <a href="http://codex.wordpress.org/Function_Reference/dynamic_sidebar" target="_blank">dynamic sidebar</a></p>
+		</section>    
+
+		<section>
+			<h2>Adding functionality</h2>
+				
+			<h4>dynamic_sidebar with conditional tags</h4>
+			
+			<p> 
+				Use the <code>dynamic_sidebar</code> tag along with conditional tags to load certain widget areas on certain pages.
+			</p> 
+
+<pre><code data-trim class="php">
+&nbsp;
+if( is_page( 'about' ) ) {
+	dynamic_sidebar( 'aboutsidebar' );
+}
+
+if( is_page( 'contact' ) ) {
+	dynamic_sidebar( 'contactsidebar' );
+}
+&nbsp;
+</code></pre
+
+			<p>View <a href="https://github.com/TheTracyL/GDI-Code-Samples/blob/master/sidebar.php" target="_blank">the code to make this work for Twentythirteen</a></p>
+		</section>  
+
+		<section>
+			<h2>Exercise time!</h2>
+			<h3>Add some functionality to your theme!</h3>
+
+			<p>
+				Try to use any of the functions we learned today.
+				<ul>
+					<li>add_image_size</li>
+					<li>get_the_post_thumbnail</li>
+					<li>wp_enqueue_style</li>
+					<li>wp_enqueue_script</li>
+				</ul>
+				<ul>
+					<li>register_nav_menus</li>
+					<li>wp_nav_menu</li>
+					<li>register_sidebar</li>
+					<li>dynamic_sidebar</li>
+				</ul>
+			</p>
+			<p><br />Try to do it yourself (if you're stuck <a href="https://github.com/TheTracyL/GDI-Code-Samples/blob/master/functions.php" target="_blank">download functions.php off Github</a>).</p>
+		</section>  
+
+<!-- SECTION V SLIDE (80) 3:30pm to 4:00pm -->
+		
+		<section>
+						<h2>V. Troubleshooting, Question &amp; Answers</h2>
+						<p><a href="http://wcsd.richorrichard.com/">wcsd.richorrichard.com</a></p>
+				</section>  
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
